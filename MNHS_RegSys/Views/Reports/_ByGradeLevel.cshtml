@@ -1,0 +1,215 @@
+﻿@using MNHS_RegSys.Models;
+@*Start of Static Report*@
+@{
+    mnhsregsysEntities e = new mnhsregsysEntities();
+    var Grade11 = e.tbl_GradeLevel.Where(a => a.Description.ToLower().Contains("grade 11")).SingleOrDefault().GradeLevelID;
+    var Grade12 = e.tbl_GradeLevel.Where(a => a.Description.ToLower().Contains("grade 12")).SingleOrDefault().GradeLevelID;
+    var Boyscnt1 = e.tbl_Student.Where(a => a.GradeLevelID == Grade11 && a.GenderID == 1).Count();
+    var Girlscnt1 = e.tbl_Student.Where(a => a.GradeLevelID == Grade11 && a.GenderID == 2).Count();
+    var Boyscnt2 = e.tbl_Student.Where(a => a.GradeLevelID == Grade12 && a.GenderID == 1).Count();
+    var Girlscnt2 = e.tbl_Student.Where(a => a.GradeLevelID == Grade12 && a.GenderID == 2).Count();
+
+    int[] _counter = new int[4];
+    _counter[0] = Boyscnt1;
+    _counter[1] = Girlscnt1;
+    _counter[2] = Boyscnt2;
+    _counter[3] = Girlscnt2;
+
+    var Highiestcnt = 0;
+    for (int i = 0; i < _counter.Length; i++)
+    {
+        if (Highiestcnt <= _counter[i])
+        {
+            Highiestcnt = _counter[i];
+        }
+    }
+}
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-center">
+            <div class="row">
+                <div class="p-4" style="margin: 5px 5px 5px 5px; border: thin solid #2d2c2c; width: 1050px;
+                        height: 100%; background-color: white;">
+                    <div id="GradeLevels">
+                        <div class="BorderTop hide">
+                        </div>
+                        <div class="row mt-2">
+                            <div class="d-flex justify-content-center col-md-3">
+                                <img src="@Url.Content("~/Images/MNHSlogo2x2.png")" />
+                            </div>
+                            <div class="d-flex justify-content-center col-md-6 mt-3">
+                                <z class="text-bold text-center">
+                                    REPUBLIC OF THE PHILIPPINES
+                                    <br />DEPARTMENT OF EDUCATION
+                                    <br />REGION XII
+                                </z>
+                            </div>
+                            <div class="d-flex justify-content-center col-md-3">
+                                <img src="@Url.Content("~/Images/DepEd2x2.png")" />
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-start pt-5">
+                            <a class="text-bold pr-3">School Code:</a>
+                            <z class="text-bold" style="padding-left: 20px;">304608</z>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <a class="text-bold pr-3">School Name:</a>
+                            <z class="text-bold" style="padding-left: 15px;">MALIGAYA NATIONAL HIGH SCHOOL</z>
+                        </div>
+                        <div class="d-flex justify-content-start pb-2">
+                            <a class="text-bold pr-3">School Address:</a>
+                            <z class="text-bold">LAMBAYONG SULTAN KUDARAT</z>
+                        </div>
+                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px;">
+                            <z class="d-flex justify-content-center text-bold">LIST OF STUDENTS BY GRADE LEVEL</z>
+                        </div>
+                        <div class="row mr-0 ml-0">
+                            <div style="border: thin solid #2d2c2c; width: 50%; height: 30px; border-top: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">GRADE 11</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 50%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">GRADE 12</z>
+                            </div>
+                        </div>
+                        <div class="row mr-0 ml-0">
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">BOYS</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">GIRLS</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">BOYS</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">GIRLS</z>
+                            </div>
+                        </div>
+                        <div class="row mr-0 ml-0">
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListGradeLevel.GradeLevelIDBoys1.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListGradeLevel.GradeLevelIDBoys1[i].GradeLevelID == 1)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListGradeLevel.GradeLevelIDBoys1[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (Boyscnt1 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - Boyscnt1;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListGradeLevel.GradeLevelIDGirls1.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListGradeLevel.GradeLevelIDGirls1[i].GradeLevelID == 1)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListGradeLevel.GradeLevelIDGirls1[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (Girlscnt1 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - Girlscnt1;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListGradeLevel.GradeLevelIDBoys2.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListGradeLevel.GradeLevelIDBoys2[i].GradeLevelID == 2)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListGradeLevel.GradeLevelIDBoys2[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (Boyscnt2 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - Boyscnt2;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListGradeLevel.GradeLevelIDGirls2.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListGradeLevel.GradeLevelIDGirls2[i].GradeLevelID == 2)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListGradeLevel.GradeLevelIDGirls2[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (Girlscnt2 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - Girlscnt2;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*End of Static Report*@

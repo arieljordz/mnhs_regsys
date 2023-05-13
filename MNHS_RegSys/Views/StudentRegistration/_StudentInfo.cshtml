@@ -1,0 +1,238 @@
+﻿<div class="card">
+    <div class="card-header bg-primarys">
+        <h3 class="card-title">
+            STUDENT REGISTRATION FORM
+        </h3>
+    </div>
+    <div class="card-body" style="padding: 0px !important;">
+        <form id="frmStudent" novalidate class="form-horizontal" data-parsley-required-message="">
+        <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 mt-4 ml-4 mr-4">
+            <div class="row">
+                <label>
+                    STUDENT DETAILS</label>
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    LRN<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control mask-lrn" name="LRN" required="required" />
+                </div>
+                <div class="col-md-2">
+                    Last Name<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control text-uppercase" name="LastName" placeholder="Last Name"
+                        required="required" />
+                </div>
+                <div class="col-md-2">
+                    First Name<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control text-uppercase" name="FirstName" placeholder="First Name"
+                        required="required" />
+                </div>
+                <div class="col-md-2">
+                    Middle Name<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control text-uppercase" name="MiddleName" placeholder="Middle Name"
+                        required="required" />
+                </div>
+                <div class="col-md-1">
+                    Suffix
+                    <div class="form-group">
+                        @Html.DropDownList("SuffixID", ViewData["cmbSuffix"] as SelectList, "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    Birth Date<a class="text-danger text-bold">*</a>
+                    <input type="date" class="form-control text-uppercase" id="BirthDate" name="BirthDate"
+                        onchange="getAge()" required="required" />
+                </div>
+                <div class="col-md-1">
+                    Age<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control text-uppercase" id="Age" name="Age" readonly="readonly" />
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    Gender<a class="text-danger text-bold">*</a>
+                    <div class="form-group">
+                        @Html.DropDownList("GenderID", ViewData["cmbGender"] as SelectList, new { @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    Father's Name
+                    <input type="text" class="form-control text-uppercase" name="FathersName" placeholder="Father's Name" />
+                </div>
+                <div class="col-md-2">
+                    Mother's Name
+                    <input type="text" class="form-control text-uppercase" name="MothersName" placeholder="Mother's Name" />
+                </div>
+                <div class="col-md-2">
+                    Guardian's Name<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control text-uppercase" name="Guardian" placeholder="Guardian's Name"
+                        required="required" />
+                </div>
+                <div class="col-md-2">
+                    Contact No.<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control mask-mobile" name="MobileNo" required="required" />
+                </div>
+                <div class="col-md-2">
+                    Relation<a class="text-danger text-bold">*</a>
+                    <div class="form-group">
+                        @Html.DropDownList("RelationID", ViewData["cmbRelation"] as SelectList, new { @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 mt-4 ml-4 mr-4">
+            <div class="row">
+                <label>
+                    LOCATION DETAILS</label>
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    Street<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control text-uppercase" name="Street" placeholder="Street"
+                        required="required" />
+                </div>
+                <div class="col-md-2">
+                    Barangay<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control text-uppercase" name="Barangay" placeholder="Barangay"
+                        required="required" />
+                </div>
+                <div class="col-md-3">
+                    Municipality/City<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control text-uppercase" name="Mun_City" placeholder="Municipality/City"
+                        required="required" />
+                </div>
+                <div class="col-md-4">
+                    Province<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control text-uppercase" name="Province" placeholder="Province"
+                        required="required" />
+                </div>
+            </div>
+        </div>
+        <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 mt-4 ml-4 mr-4">
+            <div class="row">
+                <label>
+                    SCHOOL HISTORY & OTHER DETAILS</label>
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    Religious Affiliation<a class="text-danger text-bold">*</a>
+                    <div class="form-group">
+                        @Html.DropDownList("ReligionID", ViewData["cmbReligion"] as SelectList, new { @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    Ethnicity<a class="text-danger text-bold">*</a>
+                    <div class="form-group">
+                        @Html.DropDownList("EthnicityID", ViewData["cmbEthnicity"] as SelectList, new { @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row pt-4 pl-5">
+                        <div class="custom-control custom-checkbox col-md-5" id="dvIsCityAssistant">
+                            <input type="checkbox" class="custom-control-input" id="IschkCityAssistant" name="IsCityAssistant"
+                                value="true" />
+                            <label class="custom-control-label lblUnset" for="IschkCityAssistant" style="font-size: 17px;">
+                                Is City Assistance Recipient?
+                            </label>
+                        </div>
+                        <div class="custom-control custom-checkbox col-md-4" id="dvIs4Ps">
+                            <input type="checkbox" class="custom-control-input" id="Ischk4Ps" name="Is4Ps" value="true" />
+                            <label class="custom-control-label lblUnset" for="Ischk4Ps" style="font-size: 17px;">
+                                Is 4P's/CCT Recipient?
+                            </label>
+                        </div>
+                        <div class="custom-control custom-checkbox col-md-3" id="dvIsProvisionary">
+                            <input type="checkbox" class="custom-control-input" id="IschkProvisionary" name="IsProvisionary"
+                                value="true" />
+                            <label class="custom-control-label lblUnset" for="IschkProvisionary" style="font-size: 17px;">
+                                Is Provisionary?
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    Track<a class="text-danger text-bold">*</a>
+                    <div class="form-group">
+                        @Html.DropDownList("TrackID", ViewData["cmbTrack"] as SelectList, new { @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    Strand
+                    <div class="form-group">
+                        @Html.DropDownList("StrandID", ViewData["cmbStrand"] as SelectList, "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    Specialization
+                    <div class="form-group">
+                        @Html.DropDownList("SpecID", ViewData["cmbSpecialization"] as SelectList, "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    Grade Level<a class="text-danger text-bold">*</a>
+                    <div class="form-group">
+                        @Html.DropDownList("GradeLevelID", ViewData["cmbGradeLevel"] as SelectList, new { @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    School Year<a class="text-danger text-bold">*</a>
+                    <div class="form-group">
+                        @Html.DropDownList("SY_ID", ViewData["cmbSchoolYear"] as SelectList, new { @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    Academic Status<a class="text-danger text-bold">*</a>
+                    <div class="form-group">
+                        @Html.DropDownList("AcadStatusID", ViewData["cmbAcadStatus"] as SelectList, new { @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    Previous School<a class="text-danger text-bold">*</a>
+                    <div class="form-group">
+                        @Html.DropDownList("PrevSchoolID", ViewData["cmbPrevSchool"] as SelectList, new { @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    Previous School Name<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control text-uppercase" name="PrevSchoolName" placeholder="School Name"
+                        required="required" />
+                </div>
+                <div class="col-md-4">
+                    Previous School Address<a class="text-danger text-bold">*</a>
+                    <input type="text" class="form-control text-uppercase" name="PrevSchoolAddress" placeholder="School Address"
+                        required="required" />
+                </div>
+                <div class="col-md-2">
+                    Previous S.Y. Graduated<a class="text-danger text-bold">*</a>
+                    <div class="form-group">
+                        @Html.DropDownList("PrevSYGraduatedID", ViewData["cmbPrevSY"] as SelectList, new { @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+        <div class="d-flex justify-content-end mt-3 mb-3 pr-4 pl-4">
+            <button class="btn btn-primary ml-3 hide" type="submit" id="btnUpdateStudent">
+                Update Student</button>
+            <button class="btn btn-primary ml-3" type="submit" id="btnSaveStudent">
+                Register Student</button>
+        </div>
+        <div class="d-flex p-2 bg-primarys text-white">
+            <div class="pl-2" style="font-size: 1.25rem; font-weight: 400; margin: 0;">
+                LIST OF STUDENTS</div>
+        </div>
+        <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 m-4">
+            <div class="row p-4">
+                <div class="col-md-12">
+                    <div class="dataTable_wrapper table-responsive">
+                        <table id="StudentsTable" class="table table-bordered text-center" style="width: 100%">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

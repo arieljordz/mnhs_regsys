@@ -1,0 +1,60 @@
+﻿@using MNHS_RegSys.Models;
+
+<div class="card">
+    <div class="card-header bg-primarys">
+        <h3 class="card-title">
+            STUDENT EXCERCISES FORM
+        </h3>
+    </div>
+    <div class="card-body" style="padding: 0px !important;">
+
+        <form id="frmStudent" novalidate class="form-horizontal" data-parsley-required-message="">
+            <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 mt-4 ml-4 mr-4">
+                <div class="row">
+                    <label>EXCERCISE #1</label>
+                </div>
+                @if (true)
+                {
+                    int num = 1;
+                    foreach (QuestionsDTO item in ViewBag.ListOfQuestions)
+                    {
+                        <div class="col-md-12">
+                            @num .   <a class="text-danger text-bold">@item.Question</a>
+                        </div>
+                        <div class="row ml-5">
+                            @foreach (AnswersDTO items in ViewBag.ListOfAnswers)
+                            {
+                                if (@items.QuestionID == @item.QuestionID)
+                                {
+                                    //Random rand = new Random();
+                                    //int asd = rand.Next(1,4);
+                                    <div class="custom-control custom-radio col-md-3">
+                                        <input type="radio" class="custom-control-input" id="@items.AnswerID" name="@item.QuestionID">
+                                        <label class="custom-control-label lblUnset" for="@items.AnswerID"> @items.Answer </label>
+                                    </div>
+                                }
+                            }
+                        </div>
+                        num += 1;
+                    }
+                }
+
+
+            </div>
+            <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 mt-4 ml-4 mr-4">
+                <div class="row">
+                    <label>EXCERCISE #2</label>
+                </div>
+                <div class="row mb-1">
+                </div>
+            </div>
+            <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 mt-4 ml-4 mr-4">
+                <div class="row">
+                    <label>EXCERCISE #3</label>
+                </div>
+                <div class="row mb-1">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

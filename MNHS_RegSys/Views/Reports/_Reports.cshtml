@@ -1,0 +1,49 @@
+﻿@using MNHS_RegSys.Models;
+<div class="card">
+    <div class="card-header bg-primarys">
+        <h3 class="card-title text-center">
+            GENERATE REPORTS FROM DASHBOARD
+        </h3>
+    </div>
+    <div class="card-body" style="padding: 0px !important;">
+        <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 m-4">
+            <div class="row justify-content-center mt-3 mb-2">
+                <div>
+                    <select class="form-control" id="ReportTypeID">
+                        @*<option value="0"></option>*@
+                        <option value="1">Data From Dashboard</option>
+                        <option value="2">List of Students By Strand</option>
+                        <option value="3">List of Students By Track</option>
+                        <option value="4">List of Students By Specialization</option>
+                        <option value="5">List of Students By Grade Level</option>
+                    </select>
+                </div>
+                <div class="pl-5">
+                    <button class="btn btn-primary" type="button" id="btnGenerateReport">
+                        Print Preview
+                    </button>
+                </div>
+            </div>
+            @*Start of Static Report*@
+            @*<div id="dvEmptyReport">
+            @Html.Partial("_EmptyReport")
+        </div>*@
+            <div id="dvDashBoard" class="hide">
+                @Html.Partial("_DataFromDashboard")
+            </div>
+            <div id="dvByStrand" class="hide">
+                @Html.Partial("_ByStrand")
+            </div>
+            <div id="dvByTrack" class="hide">
+                @Html.Partial("_ByTrack")
+            </div>
+            <div id="dvBySpecialization" class="hide">
+                @Html.Partial("_BySpecialization")
+            </div>
+            <div id="dvByGradeLevel" class="hide">
+                @Html.Partial("_ByGradeLevel")
+            </div>
+            @*End of Static Report*@
+        </div>
+    </div>
+</div>

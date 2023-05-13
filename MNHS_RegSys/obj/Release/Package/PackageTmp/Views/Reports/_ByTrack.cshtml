@@ -1,0 +1,206 @@
+﻿@using MNHS_RegSys.Models;
+@*Start of Static Report*@
+@{
+    mnhsregsysEntities e = new mnhsregsysEntities();
+    var ABMcnt = e.tbl_Student.Where(a => a.TrackID == 1).Count();
+    var HUMSScnt = e.tbl_Student.Where(a => a.TrackID == 2).Count();
+    var STEMcnt = e.tbl_Student.Where(a => a.TrackID == 3).Count();
+    var GAScnt = e.tbl_Student.Where(a => a.TrackID == 4).Count();
+
+    int[] _counter = new int[4];
+    _counter[0] = ABMcnt;
+    _counter[1] = HUMSScnt;
+    _counter[2] = STEMcnt;
+    _counter[3] = GAScnt;
+
+    var Highiestcnt = 0;
+    for (int i = 0; i < _counter.Length; i++)
+    {
+        if (Highiestcnt <= _counter[i])
+        {
+            Highiestcnt = _counter[i];
+        }
+    }
+}
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-center">
+            <div class="row">
+                <div class="p-4" style="margin: 5px 5px 5px 5px; border: thin solid #2d2c2c; width: 1050px;
+                        height: 100%; background-color: white;">
+                    <div id="Track">
+                        <div class="BorderTop hide">
+                        </div>
+                        <div class="row mt-2">
+                            <div class="d-flex justify-content-center col-md-3">
+                                <img src="@Url.Content("~/Images/MNHSlogo2x2.png")" />
+                            </div>
+                            <div class="d-flex justify-content-center col-md-6 mt-3">
+                                <z class="text-bold text-center">
+                                    REPUBLIC OF THE PHILIPPINES
+                                    <br />DEPARTMENT OF EDUCATION
+                                    <br />REGION XII
+                                </z>
+                            </div>
+                            <div class="d-flex justify-content-center col-md-3">
+                                <img src="@Url.Content("~/Images/DepEd2x2.png")" />
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-start pt-5">
+                            <a class="text-bold pr-3">School Code:</a>
+                            <z class="text-bold" style="padding-left: 20px;">304608</z>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <a class="text-bold pr-3">School Name:</a>
+                            <z class="text-bold" style="padding-left: 15px;">MALIGAYA NATIONAL HIGH SCHOOL</z>
+                        </div>
+                        <div class="d-flex justify-content-start pb-2">
+                            <a class="text-bold pr-3">School Address:</a>
+                            <z class="text-bold">LAMBAYONG SULTAN KUDARAT</z>
+                        </div>
+                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px;">
+                            <z class="d-flex justify-content-center text-bold">LIST OF STUDENTS BY TRACK</z>
+                        </div>
+                        <div class="row mr-0 ml-0">
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">ACADEMIC TRACK</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">TVL TRACK</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">SPORTS TRACK</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">ARTS & DESIGN TRACK</z>
+                            </div>
+                        </div>
+                        <div class="row mr-0 ml-0">
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListTrack.TrackID1.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListTrack.TrackID1[i].TrackID == 1)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListTrack.TrackID1[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (ABMcnt < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - ABMcnt;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListTrack.TrackID2.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListTrack.TrackID2[i].TrackID == 2)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListTrack.TrackID2[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (HUMSScnt < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - HUMSScnt;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListTrack.TrackID3.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListTrack.TrackID3[i].TrackID == 3)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListTrack.TrackID3[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+
+                                @if (STEMcnt < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - STEMcnt;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListTrack.TrackID4.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListTrack.TrackID4[i].TrackID == 4)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListTrack.TrackID4[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+
+                                @if (GAScnt < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - GAScnt;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*End of Static Report*@

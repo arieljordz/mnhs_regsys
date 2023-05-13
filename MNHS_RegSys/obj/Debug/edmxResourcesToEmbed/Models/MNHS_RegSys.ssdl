@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MNHS_RegSysModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="MNHS_RegSysModelStoreContainer">
+    <EntitySet Name="tbl_AcademicStatus" EntityType="MNHS_RegSysModel.Store.tbl_AcademicStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Address" EntityType="MNHS_RegSysModel.Store.tbl_Address" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Adviser" EntityType="MNHS_RegSysModel.Store.tbl_Adviser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Ethnicity" EntityType="MNHS_RegSysModel.Store.tbl_Ethnicity" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Gender" EntityType="MNHS_RegSysModel.Store.tbl_Gender" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_GradeLevel" EntityType="MNHS_RegSysModel.Store.tbl_GradeLevel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Log" EntityType="MNHS_RegSysModel.Store.tbl_Log" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_PrevSchool" EntityType="MNHS_RegSysModel.Store.tbl_PrevSchool" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_PrevSchoolYear" EntityType="MNHS_RegSysModel.Store.tbl_PrevSchoolYear" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Relation" EntityType="MNHS_RegSysModel.Store.tbl_Relation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Religion" EntityType="MNHS_RegSysModel.Store.tbl_Religion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_SchoolItems" EntityType="MNHS_RegSysModel.Store.tbl_SchoolItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_SchoolYear" EntityType="MNHS_RegSysModel.Store.tbl_SchoolYear" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Specialization" EntityType="MNHS_RegSysModel.Store.tbl_Specialization" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Strand" EntityType="MNHS_RegSysModel.Store.tbl_Strand" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Student" EntityType="MNHS_RegSysModel.Store.tbl_Student" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Suffix" EntityType="MNHS_RegSysModel.Store.tbl_Suffix" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Track" EntityType="MNHS_RegSysModel.Store.tbl_Track" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_User" EntityType="MNHS_RegSysModel.Store.tbl_User" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="tbl_AcademicStatus">
+    <Key>
+      <PropertyRef Name="AcadStatusID" />
+    </Key>
+    <Property Name="AcadStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Street" Type="varchar" MaxLength="100" />
+    <Property Name="Barangay" Type="varchar" MaxLength="100" />
+    <Property Name="Mun_City" Type="varchar" MaxLength="100" />
+    <Property Name="Province" Type="varchar" MaxLength="100" />
+    <Property Name="CompleteAddress" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="tbl_Adviser">
+    <Key>
+      <PropertyRef Name="AdviserID" />
+    </Key>
+    <Property Name="AdviserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompleteName" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar" MaxLength="150" />
+    <Property Name="GradeLevelID" Type="int" />
+    <Property Name="SY_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Ethnicity">
+    <Key>
+      <PropertyRef Name="EthnicityID" />
+    </Key>
+    <Property Name="EthnicityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_GradeLevel">
+    <Key>
+      <PropertyRef Name="GradeLevelID" />
+    </Key>
+    <Property Name="GradeLevelID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_Log">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="DateLog" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_PrevSchool">
+    <Key>
+      <PropertyRef Name="PrevSchoolID" />
+    </Key>
+    <Property Name="PrevSchoolID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_PrevSchoolYear">
+    <Key>
+      <PropertyRef Name="PrevSYGraduatedID" />
+    </Key>
+    <Property Name="PrevSYGraduatedID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SchoolYear" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Relation">
+    <Key>
+      <PropertyRef Name="RelationID" />
+    </Key>
+    <Property Name="RelationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Religion">
+    <Key>
+      <PropertyRef Name="ReligionID" />
+    </Key>
+    <Property Name="ReligionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_SchoolItems">
+    <Key>
+      <PropertyRef Name="ItemsID" />
+    </Key>
+    <Property Name="ItemsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NoOfClassRoom" Type="int" />
+    <Property Name="NoOfComfortRoom" Type="int" />
+    <Property Name="NoOfComputer" Type="int" />
+    <Property Name="NoOfSeat" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_SchoolYear">
+    <Key>
+      <PropertyRef Name="SY_ID" />
+    </Key>
+    <Property Name="SY_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StartYear" Type="varchar" MaxLength="50" />
+    <Property Name="EndYear" Type="varchar" MaxLength="50" />
+    <Property Name="SchoolYear" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Specialization">
+    <Key>
+      <PropertyRef Name="SpecID" />
+    </Key>
+    <Property Name="SpecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Strand">
+    <Key>
+      <PropertyRef Name="StrandID" />
+    </Key>
+    <Property Name="StrandID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Student">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GradeLevelID" Type="int" />
+    <Property Name="SY_ID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="SpecID" Type="int" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="LRN" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="SuffixID" Type="int" />
+    <Property Name="BirthDate" Type="datetime" />
+    <Property Name="Age" Type="int" />
+    <Property Name="GenderID" Type="int" />
+    <Property Name="FathersName" Type="varchar" MaxLength="100" />
+    <Property Name="MothersName" Type="varchar" MaxLength="100" />
+    <Property Name="Guardian" Type="varchar" MaxLength="100" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="50" />
+    <Property Name="RelationID" Type="int" />
+    <Property Name="ReligionID" Type="int" />
+    <Property Name="EthnicityID" Type="int" />
+    <Property Name="IsCityAssistant" Type="bit" />
+    <Property Name="Is4Ps" Type="bit" />
+    <Property Name="TrackID" Type="int" />
+    <Property Name="StrandID" Type="int" />
+    <Property Name="AcadStatusID" Type="int" />
+    <Property Name="IsProvisionary" Type="bit" />
+    <Property Name="PrevSchoolID" Type="int" />
+    <Property Name="PrevSchoolName" Type="varchar" MaxLength="100" />
+    <Property Name="PrevSchoolAddress" Type="varchar" MaxLength="100" />
+    <Property Name="PrevSYGraduatedID" Type="int" />
+    <Property Name="IsRegistered" Type="bit" />
+    <Property Name="DateRegistered" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Suffix">
+    <Key>
+      <PropertyRef Name="SuffixID" />
+    </Key>
+    <Property Name="SuffixID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Track">
+    <Key>
+      <PropertyRef Name="TrackID" />
+    </Key>
+    <Property Name="TrackID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompleteName" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="ConfirmPassword" Type="varchar" MaxLength="50" />
+    <Property Name="AccessType" Type="varchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+</Schema>

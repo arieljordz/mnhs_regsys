@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "ONLINE REGISTRATION";
+    Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+<div class="content-wrapper pt-5 mt-2" style="min-height: 767.986px; max-width: 100%;">
+    <div class="box-body" style="background-color: #daefdf;">
+        <section class="content-header">
+       <div class="card">
+    <div class="card-header bg-primarys">
+        <h3 class="card-title">
+            SCHOLL YEAR FORM
+        </h3>
+    </div>
+    <div class="card-body" style="padding: 0px !important;">
+        <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 mt-4 ml-4 mr-4">
+            <div class="row">
+                <label>
+                    SCHOLL YEAR DETAILS</label>
+            </div>
+            <form id="frmSchoolYear" novalidate class="form-horizontal" data-parsley-required-message="">
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    Start Year
+                    <input type="number" class="form-control" name="StartYear" placeholder="Start Year" maxlength="4" required="required"/>
+                </div>
+                <div class="col-md-2">
+                    End Year
+                    <input type="number" class="form-control" name="EndYear" placeholder="End Year" maxlength="4" required="required"/>
+                </div>
+                  <div class="col-md-2">
+                    <div class="row" style="margin-top: 28px;">
+                        <div class="custom-control custom-checkbox" id="dvIsActive">
+                            <input type="checkbox" class="custom-control-input" id="IsActive" name="IsActive"
+                                value="true" />
+                            <label class="custom-control-label lblUnset" for="IsActive" style="font-size: 17px;">
+                                Is Active
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="d-flex justify-content-end mt-3 mb-3 pr-4 pl-4">
+            <button class="btn btn-primary ml-3" type="submit" id="btnSaveSchoolYear">
+                Save School Year</button>
+        </div>
+        <div class="d-flex p-2 bg-primarys text-white">
+            <div class="pl-2" style="font-size: 1.25rem; font-weight: 400; margin: 0;">
+                LIST OF SCHOOL YEAR</div>
+        </div>
+          <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 m-4">
+            <div class="row p-4">
+                <div class="col-md-12">
+                    <div class="dataTable_wrapper table-responsive">
+                        <table id="SchoolYearsTable" class="table table-bordered text-center" style="width: 100%">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </section>
+    </div>
+</div>
+@section scripts{
+    <script src="@Url.Content("~/Scripts/JSFileMaintenance.js")" type="text/javascript"></script>
+      @*<script src="@Url.Content("~/Scripts/JSDashboard.js")" type="text/javascript"></script>*@
+    <script type="text/javascript">
+        ActiveMenu("#SchoolYear");
+    </script>
+}

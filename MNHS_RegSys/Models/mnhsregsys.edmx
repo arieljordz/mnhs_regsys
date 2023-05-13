@@ -1,0 +1,794 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="mnhsregsysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="tbl_AcademicStatus">
+          <Key>
+            <PropertyRef Name="AcadStatusID" />
+          </Key>
+          <Property Name="AcadStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Answer">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="QuestionID" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_EncodedData">
+          <Key>
+            <PropertyRef Name="EncodedDataID" />
+          </Key>
+          <Property Name="EncodedDataID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NoOfTeacher" Type="int" />
+          <Property Name="NoOfClassRoom" Type="int" />
+          <Property Name="NoOfComfortRoom" Type="int" />
+          <Property Name="NoOfSeat" Type="int" />
+          <Property Name="NoOfComputer" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_Ethnicity">
+          <Key>
+            <PropertyRef Name="EthnicityID" />
+          </Key>
+          <Property Name="EthnicityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Gender">
+          <Key>
+            <PropertyRef Name="GenderID" />
+          </Key>
+          <Property Name="GenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_GradeLevel">
+          <Key>
+            <PropertyRef Name="GradeLevelID" />
+          </Key>
+          <Property Name="GradeLevelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_Log">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="DateLog" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_PrevSchool">
+          <Key>
+            <PropertyRef Name="PrevSchoolID" />
+          </Key>
+          <Property Name="PrevSchoolID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_PrevSchoolYear">
+          <Key>
+            <PropertyRef Name="PrevSYGraduatedID" />
+          </Key>
+          <Property Name="PrevSYGraduatedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SchoolYear" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Question">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="QuestionTypeID" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_Relation">
+          <Key>
+            <PropertyRef Name="RelationID" />
+          </Key>
+          <Property Name="RelationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Religion">
+          <Key>
+            <PropertyRef Name="ReligionID" />
+          </Key>
+          <Property Name="ReligionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_SchoolYear">
+          <Key>
+            <PropertyRef Name="SY_ID" />
+          </Key>
+          <Property Name="SY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartYear" Type="varchar" MaxLength="50" />
+          <Property Name="EndYear" Type="varchar" MaxLength="50" />
+          <Property Name="SchoolYear" Type="varchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_Specialization">
+          <Key>
+            <PropertyRef Name="SpecID" />
+          </Key>
+          <Property Name="SpecID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Strand">
+          <Key>
+            <PropertyRef Name="StrandID" />
+          </Key>
+          <Property Name="StrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Student">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GradeLevelID" Type="int" />
+          <Property Name="SY_ID" Type="int" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="SpecID" Type="int" />
+          <Property Name="Street" Type="varchar" MaxLength="50" />
+          <Property Name="Barangay" Type="varchar" MaxLength="50" />
+          <Property Name="Mun_City" Type="varchar" MaxLength="50" />
+          <Property Name="Province" Type="varchar" MaxLength="50" />
+          <Property Name="CompleteAddress" Type="varchar" MaxLength="250" />
+          <Property Name="LRN" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="CompleteName" Type="varchar" MaxLength="150" />
+          <Property Name="SuffixID" Type="int" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="Age" Type="int" />
+          <Property Name="GenderID" Type="int" />
+          <Property Name="FathersName" Type="varchar" MaxLength="100" />
+          <Property Name="MothersName" Type="varchar" MaxLength="100" />
+          <Property Name="Guardian" Type="varchar" MaxLength="100" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="50" />
+          <Property Name="RelationID" Type="int" />
+          <Property Name="ReligionID" Type="int" />
+          <Property Name="EthnicityID" Type="int" />
+          <Property Name="IsCityAssistant" Type="bit" />
+          <Property Name="Is4Ps" Type="bit" />
+          <Property Name="TrackID" Type="int" />
+          <Property Name="StrandID" Type="int" />
+          <Property Name="AcadStatusID" Type="int" />
+          <Property Name="IsProvisionary" Type="bit" />
+          <Property Name="PrevSchoolID" Type="int" />
+          <Property Name="PrevSchoolName" Type="varchar" MaxLength="100" />
+          <Property Name="PrevSchoolAddress" Type="varchar" MaxLength="100" />
+          <Property Name="PrevSYGraduatedID" Type="int" />
+          <Property Name="IsRegistered" Type="bit" />
+          <Property Name="DateRegistered" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Suffix">
+          <Key>
+            <PropertyRef Name="SuffixID" />
+          </Key>
+          <Property Name="SuffixID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Track">
+          <Key>
+            <PropertyRef Name="TrackID" />
+          </Key>
+          <Property Name="TrackID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompleteName" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="AccessType" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" />
+        </EntityType>
+        <Function Name="sp_CleanRecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_GenerateReportsBy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_InsertRecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="mnhsregsysModelStoreContainer">
+          <EntitySet Name="tbl_AcademicStatus" EntityType="Self.tbl_AcademicStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Answer" EntityType="Self.tbl_Answer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_EncodedData" EntityType="Self.tbl_EncodedData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Ethnicity" EntityType="Self.tbl_Ethnicity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Gender" EntityType="Self.tbl_Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_GradeLevel" EntityType="Self.tbl_GradeLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Log" EntityType="Self.tbl_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_PrevSchool" EntityType="Self.tbl_PrevSchool" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_PrevSchoolYear" EntityType="Self.tbl_PrevSchoolYear" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Question" EntityType="Self.tbl_Question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Relation" EntityType="Self.tbl_Relation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Religion" EntityType="Self.tbl_Religion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_SchoolYear" EntityType="Self.tbl_SchoolYear" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Specialization" EntityType="Self.tbl_Specialization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Strand" EntityType="Self.tbl_Strand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Student" EntityType="Self.tbl_Student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Suffix" EntityType="Self.tbl_Suffix" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Track" EntityType="Self.tbl_Track" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_User" EntityType="Self.tbl_User" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mnhsregsysModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="mnhsregsysEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_AcademicStatus" EntityType="mnhsregsysModel.tbl_AcademicStatus" />
+          <EntitySet Name="tbl_EncodedData" EntityType="mnhsregsysModel.tbl_EncodedData" />
+          <EntitySet Name="tbl_Ethnicity" EntityType="mnhsregsysModel.tbl_Ethnicity" />
+          <EntitySet Name="tbl_Gender" EntityType="mnhsregsysModel.tbl_Gender" />
+          <EntitySet Name="tbl_GradeLevel" EntityType="mnhsregsysModel.tbl_GradeLevel" />
+          <EntitySet Name="tbl_Log" EntityType="mnhsregsysModel.tbl_Log" />
+          <EntitySet Name="tbl_PrevSchool" EntityType="mnhsregsysModel.tbl_PrevSchool" />
+          <EntitySet Name="tbl_PrevSchoolYear" EntityType="mnhsregsysModel.tbl_PrevSchoolYear" />
+          <EntitySet Name="tbl_Relation" EntityType="mnhsregsysModel.tbl_Relation" />
+          <EntitySet Name="tbl_Religion" EntityType="mnhsregsysModel.tbl_Religion" />
+          <EntitySet Name="tbl_SchoolYear" EntityType="mnhsregsysModel.tbl_SchoolYear" />
+          <EntitySet Name="tbl_Specialization" EntityType="mnhsregsysModel.tbl_Specialization" />
+          <EntitySet Name="tbl_Strand" EntityType="mnhsregsysModel.tbl_Strand" />
+          <EntitySet Name="tbl_Suffix" EntityType="mnhsregsysModel.tbl_Suffix" />
+          <EntitySet Name="tbl_Track" EntityType="mnhsregsysModel.tbl_Track" />
+          <EntitySet Name="tbl_User" EntityType="mnhsregsysModel.tbl_User" />
+          <FunctionImport Name="sp_GenerateReportsBy" ReturnType="Collection(mnhsregsysModel.sp_GenerateReportsBy_Result)" />
+          <EntitySet Name="tbl_Student" EntityType="mnhsregsysModel.tbl_Student" />
+          <EntitySet Name="tbl_Answer" EntityType="mnhsregsysModel.tbl_Answer" />
+          <EntitySet Name="tbl_Question" EntityType="mnhsregsysModel.tbl_Question" />
+        </EntityContainer>
+        <EntityType Name="tbl_AcademicStatus">
+          <Key>
+            <PropertyRef Name="AcadStatusID" />
+          </Key>
+          <Property Type="Int32" Name="AcadStatusID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_EncodedData">
+          <Key>
+            <PropertyRef Name="EncodedDataID" />
+          </Key>
+          <Property Type="Int32" Name="EncodedDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="NoOfTeacher" />
+          <Property Type="Int32" Name="NoOfClassRoom" />
+          <Property Type="Int32" Name="NoOfComfortRoom" />
+          <Property Type="Int32" Name="NoOfSeat" />
+          <Property Type="Int32" Name="NoOfComputer" />
+        </EntityType>
+        <EntityType Name="tbl_Ethnicity">
+          <Key>
+            <PropertyRef Name="EthnicityID" />
+          </Key>
+          <Property Type="Int32" Name="EthnicityID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Gender">
+          <Key>
+            <PropertyRef Name="GenderID" />
+          </Key>
+          <Property Type="Int32" Name="GenderID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_GradeLevel">
+          <Key>
+            <PropertyRef Name="GradeLevelID" />
+          </Key>
+          <Property Type="Int32" Name="GradeLevelID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Log">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Type="Int32" Name="LogID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserID" />
+          <Property Type="DateTime" Name="DateLog" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_PrevSchool">
+          <Key>
+            <PropertyRef Name="PrevSchoolID" />
+          </Key>
+          <Property Type="Int32" Name="PrevSchoolID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_PrevSchoolYear">
+          <Key>
+            <PropertyRef Name="PrevSYGraduatedID" />
+          </Key>
+          <Property Type="Int32" Name="PrevSYGraduatedID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SchoolYear" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Relation">
+          <Key>
+            <PropertyRef Name="RelationID" />
+          </Key>
+          <Property Type="Int32" Name="RelationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Religion">
+          <Key>
+            <PropertyRef Name="ReligionID" />
+          </Key>
+          <Property Type="Int32" Name="ReligionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_SchoolYear">
+          <Key>
+            <PropertyRef Name="SY_ID" />
+          </Key>
+          <Property Type="Int32" Name="SY_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StartYear" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EndYear" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SchoolYear" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="tbl_Specialization">
+          <Key>
+            <PropertyRef Name="SpecID" />
+          </Key>
+          <Property Type="Int32" Name="SpecID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Strand">
+          <Key>
+            <PropertyRef Name="StrandID" />
+          </Key>
+          <Property Type="Int32" Name="StrandID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Suffix">
+          <Key>
+            <PropertyRef Name="SuffixID" />
+          </Key>
+          <Property Type="Int32" Name="SuffixID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Track">
+          <Key>
+            <PropertyRef Name="TrackID" />
+          </Key>
+          <Property Type="Int32" Name="TrackID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Type="Int32" Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CompleteName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AccessType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DateCreated" Precision="3" />
+        </EntityType>
+        <ComplexType Name="sp_GenerateReportsBy_Result">
+          <Property Type="Int32" Name="TotalStudents" Nullable="true" />
+          <Property Type="Int32" Name="TotalBoys" Nullable="true" />
+          <Property Type="Int32" Name="TotalGirls" Nullable="true" />
+          <Property Type="Decimal" Name="TeacherStudent" Nullable="true" Precision="18" Scale="1" />
+          <Property Type="Int32" Name="TotalTeachers" Nullable="true" />
+          <Property Type="Decimal" Name="ClassRoomStudent" Nullable="true" Precision="18" Scale="1" />
+          <Property Type="Int32" Name="TotalClassRooms" Nullable="true" />
+          <Property Type="Decimal" Name="ComputerStudent" Nullable="true" Precision="18" Scale="1" />
+          <Property Type="Int32" Name="TotalComputers" Nullable="true" />
+          <Property Type="Decimal" Name="ToiletStudent" Nullable="true" Precision="18" Scale="1" />
+          <Property Type="Int32" Name="TotalToilets" Nullable="true" />
+          <Property Type="Decimal" Name="SeatStudent" Nullable="true" Precision="18" Scale="1" />
+          <Property Type="Int32" Name="TotalSeats" Nullable="true" />
+          <Property Type="Int32" Name="MaleABM" Nullable="true" />
+          <Property Type="Int32" Name="MaleHUMSS" Nullable="true" />
+          <Property Type="Int32" Name="MaleSTEM" Nullable="true" />
+          <Property Type="Int32" Name="MaleGAS" Nullable="true" />
+          <Property Type="Int32" Name="FemaleABM" Nullable="true" />
+          <Property Type="Int32" Name="FemaleHUMSS" Nullable="true" />
+          <Property Type="Int32" Name="FemaleSTEM" Nullable="true" />
+          <Property Type="Int32" Name="FemaleGAS" Nullable="true" />
+          <Property Type="Int32" Name="MaleAcademic" Nullable="true" />
+          <Property Type="Int32" Name="MaleTVL" Nullable="true" />
+          <Property Type="Int32" Name="MaleSports" Nullable="true" />
+          <Property Type="Int32" Name="MaleArtsDesign" Nullable="true" />
+          <Property Type="Int32" Name="FemaleAcademic" Nullable="true" />
+          <Property Type="Int32" Name="FemaleTVL" Nullable="true" />
+          <Property Type="Int32" Name="FemaleSports" Nullable="true" />
+          <Property Type="Int32" Name="FemaleArtsDesign" Nullable="true" />
+          <Property Type="Int32" Name="MaleRegular" Nullable="true" />
+          <Property Type="Int32" Name="MaleIrregular" Nullable="true" />
+          <Property Type="Int32" Name="MaleTransferee" Nullable="true" />
+          <Property Type="Int32" Name="MaleBalikAral" Nullable="true" />
+          <Property Type="Int32" Name="FemaleRegular" Nullable="true" />
+          <Property Type="Int32" Name="FemaleIrregular" Nullable="true" />
+          <Property Type="Int32" Name="FemaleTransferee" Nullable="true" />
+          <Property Type="Int32" Name="FemaleBalikAral" Nullable="true" />
+          <Property Type="Int32" Name="Islam" Nullable="true" />
+          <Property Type="Int32" Name="Catholic" Nullable="true" />
+          <Property Type="Int32" Name="Evangelical" Nullable="true" />
+          <Property Type="Int32" Name="INC" Nullable="true" />
+          <Property Type="Int32" Name="SDA" Nullable="true" />
+          <Property Type="Int32" Name="UCCP" Nullable="true" />
+          <Property Type="Int32" Name="Jehova" Nullable="true" />
+          <Property Type="Int32" Name="Methodist" Nullable="true" />
+          <Property Type="Int32" Name="Baptists" Nullable="true" />
+          <Property Type="Int32" Name="Tribal" Nullable="true" />
+          <Property Type="Int32" Name="Ilongo" Nullable="true" />
+          <Property Type="Int32" Name="Ilocano" Nullable="true" />
+          <Property Type="Int32" Name="Blaan" Nullable="true" />
+          <Property Type="Int32" Name="Cebuano" Nullable="true" />
+          <Property Type="Int32" Name="Manobo" Nullable="true" />
+          <Property Type="Int32" Name="Mangyan" Nullable="true" />
+          <Property Type="Int32" Name="Tboli" Nullable="true" />
+          <Property Type="Int32" Name="Others" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="tbl_Student">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GradeLevelID" Type="Int32" />
+          <Property Name="SY_ID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="SpecID" Type="Int32" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Barangay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mun_City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompleteAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LRN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompleteName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SuffixID" Type="Int32" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="GenderID" Type="Int32" />
+          <Property Name="FathersName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MothersName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Guardian" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RelationID" Type="Int32" />
+          <Property Name="ReligionID" Type="Int32" />
+          <Property Name="EthnicityID" Type="Int32" />
+          <Property Name="IsCityAssistant" Type="Boolean" />
+          <Property Name="Is4Ps" Type="Boolean" />
+          <Property Name="TrackID" Type="Int32" />
+          <Property Name="StrandID" Type="Int32" />
+          <Property Name="AcadStatusID" Type="Int32" />
+          <Property Name="IsProvisionary" Type="Boolean" />
+          <Property Name="PrevSchoolID" Type="Int32" />
+          <Property Name="PrevSchoolName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PrevSchoolAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PrevSYGraduatedID" Type="Int32" />
+          <Property Name="IsRegistered" Type="Boolean" />
+          <Property Name="DateRegistered" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_Answer">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="QuestionID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_Question">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="QuestionTypeID" Type="Int32" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mnhsregsysModelStoreContainer" CdmEntityContainer="mnhsregsysEntities">
+          <EntitySetMapping Name="tbl_AcademicStatus">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_AcademicStatus">
+              <MappingFragment StoreEntitySet="tbl_AcademicStatus">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AcadStatusID" ColumnName="AcadStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_EncodedData">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_EncodedData">
+              <MappingFragment StoreEntitySet="tbl_EncodedData">
+                <ScalarProperty Name="NoOfComputer" ColumnName="NoOfComputer" />
+                <ScalarProperty Name="NoOfSeat" ColumnName="NoOfSeat" />
+                <ScalarProperty Name="NoOfComfortRoom" ColumnName="NoOfComfortRoom" />
+                <ScalarProperty Name="NoOfClassRoom" ColumnName="NoOfClassRoom" />
+                <ScalarProperty Name="NoOfTeacher" ColumnName="NoOfTeacher" />
+                <ScalarProperty Name="EncodedDataID" ColumnName="EncodedDataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Ethnicity">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Ethnicity">
+              <MappingFragment StoreEntitySet="tbl_Ethnicity">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="EthnicityID" ColumnName="EthnicityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Gender">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Gender">
+              <MappingFragment StoreEntitySet="tbl_Gender">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_GradeLevel">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_GradeLevel">
+              <MappingFragment StoreEntitySet="tbl_GradeLevel">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="GradeLevelID" ColumnName="GradeLevelID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Log">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Log">
+              <MappingFragment StoreEntitySet="tbl_Log">
+                <ScalarProperty Name="DateLog" ColumnName="DateLog" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="LogID" ColumnName="LogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_PrevSchool">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_PrevSchool">
+              <MappingFragment StoreEntitySet="tbl_PrevSchool">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PrevSchoolID" ColumnName="PrevSchoolID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_PrevSchoolYear">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_PrevSchoolYear">
+              <MappingFragment StoreEntitySet="tbl_PrevSchoolYear">
+                <ScalarProperty Name="SchoolYear" ColumnName="SchoolYear" />
+                <ScalarProperty Name="PrevSYGraduatedID" ColumnName="PrevSYGraduatedID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Relation">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Relation">
+              <MappingFragment StoreEntitySet="tbl_Relation">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RelationID" ColumnName="RelationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Religion">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Religion">
+              <MappingFragment StoreEntitySet="tbl_Religion">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SchoolYear">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_SchoolYear">
+              <MappingFragment StoreEntitySet="tbl_SchoolYear">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="SchoolYear" ColumnName="SchoolYear" />
+                <ScalarProperty Name="EndYear" ColumnName="EndYear" />
+                <ScalarProperty Name="StartYear" ColumnName="StartYear" />
+                <ScalarProperty Name="SY_ID" ColumnName="SY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Specialization">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Specialization">
+              <MappingFragment StoreEntitySet="tbl_Specialization">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SpecID" ColumnName="SpecID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Strand">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Strand">
+              <MappingFragment StoreEntitySet="tbl_Strand">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StrandID" ColumnName="StrandID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Suffix">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Suffix">
+              <MappingFragment StoreEntitySet="tbl_Suffix">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SuffixID" ColumnName="SuffixID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Track">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Track">
+              <MappingFragment StoreEntitySet="tbl_Track">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TrackID" ColumnName="TrackID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_User">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_User">
+              <MappingFragment StoreEntitySet="tbl_User">
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="AccessType" ColumnName="AccessType" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="CompleteName" ColumnName="CompleteName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_GenerateReportsBy" FunctionName="mnhsregsysModel.Store.sp_GenerateReportsBy">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="mnhsregsysModel.sp_GenerateReportsBy_Result">
+                <ScalarProperty Name="TotalStudents" ColumnName="TotalStudents" />
+                <ScalarProperty Name="TotalBoys" ColumnName="TotalBoys" />
+                <ScalarProperty Name="TotalGirls" ColumnName="TotalGirls" />
+                <ScalarProperty Name="TeacherStudent" ColumnName="TeacherStudent" />
+                <ScalarProperty Name="TotalTeachers" ColumnName="TotalTeachers" />
+                <ScalarProperty Name="ClassRoomStudent" ColumnName="ClassRoomStudent" />
+                <ScalarProperty Name="TotalClassRooms" ColumnName="TotalClassRooms" />
+                <ScalarProperty Name="ComputerStudent" ColumnName="ComputerStudent" />
+                <ScalarProperty Name="TotalComputers" ColumnName="TotalComputers" />
+                <ScalarProperty Name="ToiletStudent" ColumnName="ToiletStudent" />
+                <ScalarProperty Name="TotalToilets" ColumnName="TotalToilets" />
+                <ScalarProperty Name="SeatStudent" ColumnName="SeatStudent" />
+                <ScalarProperty Name="TotalSeats" ColumnName="TotalSeats" />
+                <ScalarProperty Name="MaleABM" ColumnName="MaleABM" />
+                <ScalarProperty Name="MaleHUMSS" ColumnName="MaleHUMSS" />
+                <ScalarProperty Name="MaleSTEM" ColumnName="MaleSTEM" />
+                <ScalarProperty Name="MaleGAS" ColumnName="MaleGAS" />
+                <ScalarProperty Name="FemaleABM" ColumnName="FemaleABM" />
+                <ScalarProperty Name="FemaleHUMSS" ColumnName="FemaleHUMSS" />
+                <ScalarProperty Name="FemaleSTEM" ColumnName="FemaleSTEM" />
+                <ScalarProperty Name="FemaleGAS" ColumnName="FemaleGAS" />
+                <ScalarProperty Name="MaleAcademic" ColumnName="MaleAcademic" />
+                <ScalarProperty Name="MaleTVL" ColumnName="MaleTVL" />
+                <ScalarProperty Name="MaleSports" ColumnName="MaleSports" />
+                <ScalarProperty Name="MaleArtsDesign" ColumnName="MaleArtsDesign" />
+                <ScalarProperty Name="FemaleAcademic" ColumnName="FemaleAcademic" />
+                <ScalarProperty Name="FemaleTVL" ColumnName="FemaleTVL" />
+                <ScalarProperty Name="FemaleSports" ColumnName="FemaleSports" />
+                <ScalarProperty Name="FemaleArtsDesign" ColumnName="FemaleArtsDesign" />
+                <ScalarProperty Name="MaleRegular" ColumnName="MaleRegular" />
+                <ScalarProperty Name="MaleIrregular" ColumnName="MaleIrregular" />
+                <ScalarProperty Name="MaleTransferee" ColumnName="MaleTransferee" />
+                <ScalarProperty Name="MaleBalikAral" ColumnName="MaleBalikAral" />
+                <ScalarProperty Name="FemaleRegular" ColumnName="FemaleRegular" />
+                <ScalarProperty Name="FemaleIrregular" ColumnName="FemaleIrregular" />
+                <ScalarProperty Name="FemaleTransferee" ColumnName="FemaleTransferee" />
+                <ScalarProperty Name="FemaleBalikAral" ColumnName="FemaleBalikAral" />
+                <ScalarProperty Name="Islam" ColumnName="Islam" />
+                <ScalarProperty Name="Catholic" ColumnName="Catholic" />
+                <ScalarProperty Name="Evangelical" ColumnName="Evangelical" />
+                <ScalarProperty Name="INC" ColumnName="INC" />
+                <ScalarProperty Name="SDA" ColumnName="SDA" />
+                <ScalarProperty Name="UCCP" ColumnName="UCCP" />
+                <ScalarProperty Name="Jehova" ColumnName="Jehova" />
+                <ScalarProperty Name="Methodist" ColumnName="Methodist" />
+                <ScalarProperty Name="Baptists" ColumnName="Baptists" />
+                <ScalarProperty Name="Tribal" ColumnName="Tribal" />
+                <ScalarProperty Name="Ilongo" ColumnName="Ilongo" />
+                <ScalarProperty Name="Ilocano" ColumnName="Ilocano" />
+                <ScalarProperty Name="Blaan" ColumnName="Blaan" />
+                <ScalarProperty Name="Cebuano" ColumnName="Cebuano" />
+                <ScalarProperty Name="Manobo" ColumnName="Manobo" />
+                <ScalarProperty Name="Mangyan" ColumnName="Mangyan" />
+                <ScalarProperty Name="Tboli" ColumnName="Tboli" />
+                <ScalarProperty Name="Others" ColumnName="Others" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tbl_Student">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Student">
+              <MappingFragment StoreEntitySet="tbl_Student">
+                <ScalarProperty Name="DateRegistered" ColumnName="DateRegistered" />
+                <ScalarProperty Name="IsRegistered" ColumnName="IsRegistered" />
+                <ScalarProperty Name="PrevSYGraduatedID" ColumnName="PrevSYGraduatedID" />
+                <ScalarProperty Name="PrevSchoolAddress" ColumnName="PrevSchoolAddress" />
+                <ScalarProperty Name="PrevSchoolName" ColumnName="PrevSchoolName" />
+                <ScalarProperty Name="PrevSchoolID" ColumnName="PrevSchoolID" />
+                <ScalarProperty Name="IsProvisionary" ColumnName="IsProvisionary" />
+                <ScalarProperty Name="AcadStatusID" ColumnName="AcadStatusID" />
+                <ScalarProperty Name="StrandID" ColumnName="StrandID" />
+                <ScalarProperty Name="TrackID" ColumnName="TrackID" />
+                <ScalarProperty Name="Is4Ps" ColumnName="Is4Ps" />
+                <ScalarProperty Name="IsCityAssistant" ColumnName="IsCityAssistant" />
+                <ScalarProperty Name="EthnicityID" ColumnName="EthnicityID" />
+                <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+                <ScalarProperty Name="RelationID" ColumnName="RelationID" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Guardian" ColumnName="Guardian" />
+                <ScalarProperty Name="MothersName" ColumnName="MothersName" />
+                <ScalarProperty Name="FathersName" ColumnName="FathersName" />
+                <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="SuffixID" ColumnName="SuffixID" />
+                <ScalarProperty Name="CompleteName" ColumnName="CompleteName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="LRN" ColumnName="LRN" />
+                <ScalarProperty Name="CompleteAddress" ColumnName="CompleteAddress" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Mun_City" ColumnName="Mun_City" />
+                <ScalarProperty Name="Barangay" ColumnName="Barangay" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="SpecID" ColumnName="SpecID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SY_ID" ColumnName="SY_ID" />
+                <ScalarProperty Name="GradeLevelID" ColumnName="GradeLevelID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Answer">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Answer">
+              <MappingFragment StoreEntitySet="tbl_Answer">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Question">
+            <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Question">
+              <MappingFragment StoreEntitySet="tbl_Question">
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="mnhsregsys">
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_AcademicStatus" Width="1.5" PointX="0.75" PointY="0.75" Height="1.4033821614583388" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_EncodedData" Width="1.5" PointX="2.75" PointY="0.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Ethnicity" Width="1.5" PointX="0.75" PointY="3.75" Height="1.4033821614583388" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Gender" Width="1.5" PointX="2.75" PointY="3.75" Height="1.4033821614583388" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_GradeLevel" Width="1.5" PointX="4.75" PointY="0.75" Height="1.4033821614583282" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Log" Width="1.5" PointX="4.75" PointY="3.75" Height="1.5956835937500102" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_PrevSchool" Width="1.5" PointX="6.75" PointY="0.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_PrevSchoolYear" Width="1.5" PointX="0.75" PointY="6.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Relation" Width="1.5" PointX="2.75" PointY="6.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Religion" Width="1.5" PointX="6.75" PointY="3.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_SchoolYear" Width="1.5" PointX="4.75" PointY="6.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Specialization" Width="1.5" PointX="6.75" PointY="6.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Strand" Width="1.5" PointX="8.75" PointY="0.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Suffix" Width="1.5" PointX="0.75" PointY="9.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Track" Width="1.5" PointX="2.75" PointY="9.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_User" Width="1.5" PointX="4.75" PointY="9.75" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Student" Width="1.5" PointX="9.375" PointY="3.75" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Answer" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="mnhsregsysModel.tbl_Question" Width="1.5" PointX="11.375" PointY="3.75" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,450 @@
+﻿@using MNHS_RegSys.Models;
+@*Start of Static Report*@
+@{
+    mnhsregsysEntities e = new mnhsregsysEntities();
+    var cnt1 = e.tbl_Student.Where(a => a.SpecID == 1).Count();
+    var cnt2 = e.tbl_Student.Where(a => a.SpecID == 2).Count();
+    var cnt3 = e.tbl_Student.Where(a => a.SpecID == 3).Count();
+    var cnt4 = e.tbl_Student.Where(a => a.SpecID == 4).Count();
+    var cnt5 = e.tbl_Student.Where(a => a.SpecID == 5).Count();
+    var cnt6 = e.tbl_Student.Where(a => a.SpecID == 6).Count();
+    var cnt7 = e.tbl_Student.Where(a => a.SpecID == 7).Count();
+    var cnt8 = e.tbl_Student.Where(a => a.SpecID == 8).Count();
+    var cnt9 = e.tbl_Student.Where(a => a.SpecID == 9).Count();
+    var cnt10 = e.tbl_Student.Where(a => a.SpecID == 10).Count();
+    var cnt11 = e.tbl_Student.Where(a => a.SpecID == 11).Count();
+
+    int[] _counter = new int[11];
+    _counter[0] = cnt1;
+    _counter[1] = cnt2;
+    _counter[2] = cnt3;
+    _counter[3] = cnt4;
+    _counter[4] = cnt5;
+    _counter[5] = cnt6;
+    _counter[6] = cnt7;
+    _counter[7] = cnt8;
+    _counter[8] = cnt9;
+    _counter[9] = cnt10;
+    _counter[10] = cnt11;
+
+    var Highiestcnt = 0;
+    for (int i = 0; i < _counter.Length; i++)
+    {
+        if (Highiestcnt <= _counter[i])
+        {
+            Highiestcnt = _counter[i];
+        }
+    }
+}
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-center">
+            <div class="row">
+                <div class="p-4" style="margin: 5px 5px 5px 5px; border: thin solid #2d2c2c; width: 1050px;
+                        height: 100%; background-color: white;">
+                    <div id="Specialization">
+                        <div class="BorderTop hide">
+                        </div>
+                        <div class="row mt-2">
+                            <div class="d-flex justify-content-center col-md-3">
+                                <img src="@Url.Content("~/Images/MNHSlogo2x2.png")" />
+                            </div>
+                            <div class="d-flex justify-content-center col-md-6 mt-3">
+                                <z class="text-bold text-center">
+                                    REPUBLIC OF THE PHILIPPINES
+                                    <br />DEPARTMENT OF EDUCATION
+                                    <br />REGION XII
+                                </z>
+                            </div>
+                            <div class="d-flex justify-content-center col-md-3">
+                                <img src="@Url.Content("~/Images/DepEd2x2.png")" />
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-start pt-5">
+                            <a class="text-bold pr-3">School Code:</a>
+                            <z class="text-bold" style="padding-left: 20px;">304608</z>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <a class="text-bold pr-3">School Name:</a>
+                            <z class="text-bold" style="padding-left: 15px;">MALIGAYA NATIONAL HIGH SCHOOL</z>
+                        </div>
+                        <div class="d-flex justify-content-start pb-2">
+                            <a class="text-bold pr-3">School Address:</a>
+                            <z class="text-bold">LAMBAYONG SULTAN KUDARAT</z>
+                        </div>
+                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px;">
+                            <z class="d-flex justify-content-center text-bold">LIST OF STUDENTS BY SPECIALIZATION</z>
+                        </div>
+                        <div class="row mr-0 ml-0">
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">BREAD & PASTRY</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">FOOD & BEVERAGE</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">CAREGIVING</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">HAIRDRESSING</z>
+                            </div>
+                        </div>
+                        <div class="row mr-0 ml-0 mb-5">
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListSpec.SpecID1.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListSpec.SpecID1[i].SpecID == 1)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListSpec.SpecID1[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (cnt1 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - cnt1;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListSpec.SpecID2.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListSpec.SpecID2[i].SpecID == 2)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListSpec.SpecID2[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (cnt2 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - cnt2;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListSpec.SpecID3.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListSpec.SpecID3[i].SpecID == 3)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListSpec.SpecID3[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+
+                                @if (cnt3 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - cnt3;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListSpec.SpecID4.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListSpec.SpecID4[i].SpecID == 4)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListSpec.SpecID4[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+
+                                @if (cnt4 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - cnt4;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+
+                        </div>
+
+                        <div class="row mr-0 ml-0">
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px;">
+                                <z class="d-flex justify-content-center p-2 text-bold">DRESS MAKING</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">AUTOMOTIVE</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">ELECTRICAL</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">ELECTRONICS</z>
+                            </div>
+                        </div>
+                        <div class="row mr-0 ml-0 mb-5">
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListSpec.SpecID5.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListSpec.SpecID5[i].SpecID == 5)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListSpec.SpecID5[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (cnt5 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - cnt5;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListSpec.SpecID6.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListSpec.SpecID6[i].SpecID == 6)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListSpec.SpecID6[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (cnt6 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - cnt6;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListSpec.SpecID7.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListSpec.SpecID7[i].SpecID == 7)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListSpec.SpecID7[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+
+                                @if (cnt7 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - cnt7;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListSpec.SpecID8.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListSpec.SpecID8[i].SpecID == 8)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListSpec.SpecID8[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+
+                                @if (cnt8 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - cnt8;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+
+                        </div>
+
+                        <div class="row mr-0 ml-0">
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px;">
+                                <z class="d-flex justify-content-center p-2 text-bold">PEST MANAGEMENT</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">COMPUTER SYSTEM SERVICING</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold">COOKERY</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 25%; height: 30px;
+                                    border-left: white;">
+                                <z class="d-flex justify-content-center p-2 text-bold"> </z>
+                            </div>
+                        </div>
+                        <div class="row mr-0 ml-0 mb-3">
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListSpec.SpecID9.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListSpec.SpecID9[i].SpecID == 9)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListSpec.SpecID9[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (cnt9 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - cnt9;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListSpec.SpecID10.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListSpec.SpecID10[i].SpecID == 10)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListSpec.SpecID10[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+                                @if (cnt10 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - cnt10;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                @for (int i = 0; i < StudentListSpec.SpecID11.Count(); i++)
+                                {
+                                    var No = i + 1;
+                                    if (StudentListSpec.SpecID11[i].SpecID == 11)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold">
+                                                <span style="font-size: 15px;">@No</span>. <span class="ml-1" style="font-size: 15px;">@StudentListSpec.SpecID11[i].CompleteName</span>
+                                            </z>
+                                        </div>
+                                    }
+                                }
+
+
+                                @if (cnt11 < Highiestcnt)
+                                {
+                                    int dif = Highiestcnt - cnt11;
+                                    for (int i = 0; i < dif; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                                }
+
+                            </z>
+                            <z class="col-md-3 pl-0 pr-0">
+                                    @for (int i = 0; i < Highiestcnt; i++)
+                                    {
+                                        <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white; border-left: white;">
+                                            <z class="d-flex justify-content-start p-2 text-bold"></z>
+                                        </div>
+                                    }
+                            </z>
+
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                        <div class="pb-xl-5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*End of Static Report*@

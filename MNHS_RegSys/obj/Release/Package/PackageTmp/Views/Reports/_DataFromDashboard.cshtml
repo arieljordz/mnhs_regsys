@@ -1,0 +1,468 @@
+﻿@using MNHS_RegSys.Models;
+@*Start of Static Report*@
+@foreach (DataFromDashboardDTO list in ViewBag.DataFromDashboard)
+{
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="p-4" style="margin: 5px 5px 5px 5px; border: thin solid #2d2c2c; width: 1050px;
+                        height: 100%; background-color: white;">
+                        <div id="Dashboards">
+                            <div class="BorderTop hide">
+                            </div>
+                            <div class="row mt-2">
+                                <div class="d-flex justify-content-center col-md-3">
+                                    <img src="@Url.Content("~/Images/MNHSlogo2x2.png")" /></div>
+                                <div class="d-flex justify-content-center col-md-6 mt-3">
+                                    <z class="text-bold text-center">
+                                                    REPUBLIC OF THE PHILIPPINES
+                                                    <br />DEPARTMENT OF EDUCATION
+                                                    <br />REGION XII
+                                                </z>
+                                </div>
+                                <div class="d-flex justify-content-center col-md-3">
+                                    <img src="@Url.Content("~/Images/DepEd2x2.png")" /></div>
+                            </div>
+                            <div class="d-flex justify-content-start pt-5">
+                                <a class="text-bold pr-3">School Code:</a>
+                                <z class="text-bold" style="padding-left: 20px;">304608</z>
+                            </div>
+                            <div class="d-flex justify-content-start">
+                                <a class="text-bold pr-3">School Name:</a>
+                                <z class="text-bold" style="padding-left: 15px;">MALIGAYA NATIONAL HIGH SCHOOL</z>
+                            </div>
+                            <div class="d-flex justify-content-start pb-2">
+                                <a class="text-bold pr-3">School Address:</a>
+                                <z class="text-bold">LAMBAYONG SULTAN KUDARAT</z>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 100%; height: 30px;">
+                                <z class="d-flex justify-content-center text-bold">DATA FROM DASHBOARD</z>
+                            </div>
+                            <div class="row mr-0 ml-0">
+                                <div style="border: thin solid #2d2c2c; width: 33%; height: 85px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-2 text-bold">Total Number of Students: @list.TotalStudents <br />Total Number of Boys: @list.TotalBoys <br />Total Number of Girls: @list.TotalGirls </z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 34%; height: 85px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-2 text-bold">Student-Teacher Ratio: @list.TeacherStudent : 1 <br />Total Number of Students: @list.TotalStudents <br />Total Number of Teachers: @list.TotalTeachers </z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 33%; height: 85px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-2 text-bold">Student-Class Room Ratio: @list.ClassRoomStudent : 1 <br />Total Number of Students: @list.TotalStudents <br />Total Number of Class Room: @list.TotalClassRooms </z>
+                                </div>
+                            </div>
+                            <div class="row mr-0 ml-0">
+                                <div style="border: thin solid #2d2c2c; width: 33%; height: 85px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-2 text-bold">Computer-Student Ratio: @list.ComputerStudent : 1 <br />Total Number of Computers: @list.TotalComputers <br />Total Number of Students: @list.TotalStudents </z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 34%; height: 85px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-2 text-bold">Student-Toilet Ratio: @list.ToiletStudent : 1 <br />Total Number of Students: @list.TotalStudents <br />Total Number of Toilets: @list.TotalToilets </z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 33%; height: 85px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-2 text-bold">Seat-Student Ratio: @list.SeatStudent : 1 <br />Total Number of Seats: @list.TotalSeats <br />Total Number of Students: @list.TotalStudents </z>
+                                </div>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                <z class="d-flex justify-content-center text-bold">DATA FROM BAR CHARTS</z>
+                            </div>
+                            <div class="row mr-0 ml-0">
+                                <div style="border: thin solid #2d2c2c; width: 15%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Track</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">Boys</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">Girls</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 16%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Strand</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">Boys</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">Girls</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 15%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Academic Status</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">Boys</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">Girls</z>
+                                </div>
+                            </div>
+                            <div class="row mr-0 ml-0">
+                                <div style="border: thin solid #2d2c2c; width: 15%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Academic Track</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleAcademic</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleAcademic</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 16%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">ABM Strand</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleABM</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleABM</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 15%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Regular</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleRegular</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleRegular</z>
+                                </div>
+                            </div>
+                            <div class="row mr-0 ml-0">
+                                <div style="border: thin solid #2d2c2c; width: 15%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">TVL Track</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleTVL</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleTVL</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 16%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">HUMSS Strand</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleHUMSS</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleHUMSS</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 15%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Irregular</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleIrregular</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleIrregular</z>
+                                </div>
+                            </div>
+                            <div class="row mr-0 ml-0">
+                                <div style="border: thin solid #2d2c2c; width: 15%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Sports Track</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleSports</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleSports</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 16%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">STEM Strand</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleSTEM</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleSTEM</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 15%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Transferee</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleTransferee</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleTransferee</z>
+                                </div>
+                            </div>
+                            <div class="row mr-0 ml-0">
+                                <div style="border: thin solid #2d2c2c; width: 15%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Arts & Design Track</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleArtsDesign</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleArtsDesign</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 16%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">GAS Strand</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleGAS</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleGAS</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 15%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Balik Aral</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.MaleBalikAral</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 9%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.FemaleBalikAral</z>
+                                </div>
+                            </div>
+                            <div style="border: thin solid #2d2c2c; width: 100%; height: 30px; border-top: white;">
+                                <z class="d-flex justify-content-center text-bold">DATA FROM PIE CHARTS</z>
+                            </div>
+                            <div class="row mr-0 ml-0">
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">Religion</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">Count</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 2%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">Ethnicity</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">Count</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Islam</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Islam</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 2%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Ilonggo</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Ilongo</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Catholic</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Catholic</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 2%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Ilocano</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Ilocano</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Evangelical</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Evangelical</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 2%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Blaan</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Blaan</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">INC</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1">@list.INC</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 2%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Cebuano</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Cebuano</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">SDA</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.SDA</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 2%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Manobo</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Manobo</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">UCCP</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.UCCP</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 2%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Mangyan</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Mangyan</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Jehova</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Jehova</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 2%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">T'boli</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Tboli</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Methodist</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Methodist</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 2%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Others</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Others</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Baptists</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Baptists</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 2%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1"></z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1"></z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;">
+                                    <z class="d-flex justify-content-start p-1 text-bold">Tribal</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1 text-bold">@list.Tribal</z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 2%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 25%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-start p-1"></z>
+                                </div>
+                                <div style="border: thin solid #2d2c2c; width: 24%; height: 30px; border-top: white;
+                                    border-left: white;">
+                                    <z class="d-flex justify-content-center p-1"></z>
+                                </div>
+                            </div>
+                            <div class="pb-xl-5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@*End of Static Report*@ 

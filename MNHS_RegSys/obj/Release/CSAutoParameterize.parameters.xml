@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=.\SQLEXPRESS;Initial Catalog=aspnet-MNHS_RegSys-20190805105433;Integrated Security=SSPI" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\JERICSON\ PALMA\\Desktop\\JORDZ\ FILE08282019\\MNHS_RegSys\\MNHS_RegSys\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="mnhsregsysEntities-Web.config Connection String" description="mnhsregsysEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.mnhsregsys.csdl|res://*/Models.mnhsregsys.ssdl|res://*/Models.mnhsregsys.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=den1.mssql7.gear.host;initial catalog=mnhsregsys;integrated security=False;user id=mnhsregsys;password=P@ssw0rd;multipleactiveresultsets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\JERICSON\ PALMA\\Desktop\\JORDZ\ FILE08282019\\MNHS_RegSys\\MNHS_RegSys\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='mnhsregsysEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MNHS_RegSysModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="MNHS_RegSysEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_AcademicStatus" EntityType="MNHS_RegSysModel.tbl_AcademicStatus" />
+    <EntitySet Name="tbl_Adviser" EntityType="MNHS_RegSysModel.tbl_Adviser" />
+    <EntitySet Name="tbl_Ethnicity" EntityType="MNHS_RegSysModel.tbl_Ethnicity" />
+    <EntitySet Name="tbl_Gender" EntityType="MNHS_RegSysModel.tbl_Gender" />
+    <EntitySet Name="tbl_GradeLevel" EntityType="MNHS_RegSysModel.tbl_GradeLevel" />
+    <EntitySet Name="tbl_Log" EntityType="MNHS_RegSysModel.tbl_Log" />
+    <EntitySet Name="tbl_PrevSchool" EntityType="MNHS_RegSysModel.tbl_PrevSchool" />
+    <EntitySet Name="tbl_PrevSchoolYear" EntityType="MNHS_RegSysModel.tbl_PrevSchoolYear" />
+    <EntitySet Name="tbl_Relation" EntityType="MNHS_RegSysModel.tbl_Relation" />
+    <EntitySet Name="tbl_Religion" EntityType="MNHS_RegSysModel.tbl_Religion" />
+    <EntitySet Name="tbl_SchoolYear" EntityType="MNHS_RegSysModel.tbl_SchoolYear" />
+    <EntitySet Name="tbl_Specialization" EntityType="MNHS_RegSysModel.tbl_Specialization" />
+    <EntitySet Name="tbl_Student" EntityType="MNHS_RegSysModel.tbl_Student" />
+    <EntitySet Name="tbl_Suffix" EntityType="MNHS_RegSysModel.tbl_Suffix" />
+    <EntitySet Name="tbl_Track" EntityType="MNHS_RegSysModel.tbl_Track" />
+    <EntitySet Name="tbl_User" EntityType="MNHS_RegSysModel.tbl_User" />
+    <EntitySet Name="tbl_Strand" EntityType="MNHS_RegSysModel.tbl_Strand" />
+    <EntitySet Name="tbl_Address" EntityType="MNHS_RegSysModel.tbl_Address" />
+    <EntitySet Name="tbl_SchoolItems" EntityType="MNHS_RegSysModel.tbl_SchoolItems" />
+  </EntityContainer>
+  <EntityType Name="tbl_AcademicStatus">
+    <Key>
+      <PropertyRef Name="AcadStatusID" />
+    </Key>
+    <Property Type="Int32" Name="AcadStatusID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Adviser">
+    <Key>
+      <PropertyRef Name="AdviserID" />
+    </Key>
+    <Property Type="Int32" Name="AdviserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CompleteName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="GradeLevelID" />
+    <Property Type="Int32" Name="SY_ID" />
+  </EntityType>
+  <EntityType Name="tbl_Ethnicity">
+    <Key>
+      <PropertyRef Name="EthnicityID" />
+    </Key>
+    <Property Type="Int32" Name="EthnicityID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Type="Int32" Name="GenderID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_GradeLevel">
+    <Key>
+      <PropertyRef Name="GradeLevelID" />
+    </Key>
+    <Property Type="Int32" Name="GradeLevelID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Log">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Type="Int32" Name="LogID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" />
+    <Property Type="DateTime" Name="DateLog" />
+  </EntityType>
+  <EntityType Name="tbl_PrevSchool">
+    <Key>
+      <PropertyRef Name="PrevSchoolID" />
+    </Key>
+    <Property Type="Int32" Name="PrevSchoolID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_PrevSchoolYear">
+    <Key>
+      <PropertyRef Name="PrevSYGraduatedID" />
+    </Key>
+    <Property Type="Int32" Name="PrevSYGraduatedID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SchoolYear" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Relation">
+    <Key>
+      <PropertyRef Name="RelationID" />
+    </Key>
+    <Property Type="Int32" Name="RelationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Religion">
+    <Key>
+      <PropertyRef Name="ReligionID" />
+    </Key>
+    <Property Type="Int32" Name="ReligionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_SchoolYear">
+    <Key>
+      <PropertyRef Name="SY_ID" />
+    </Key>
+    <Property Type="Int32" Name="SY_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="StartYear" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EndYear" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SchoolYear" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" />
+  </EntityType>
+  <EntityType Name="tbl_Specialization">
+    <Key>
+      <PropertyRef Name="SpecID" />
+    </Key>
+    <Property Type="Int32" Name="SpecID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Student">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Type="Int32" Name="StudentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="GradeLevelID" />
+    <Property Type="Int32" Name="SY_ID" />
+    <Property Type="Int32" Name="UserID" />
+    <Property Type="Int32" Name="SpecID" />
+    <Property Type="Int32" Name="AddressID" />
+    <Property Type="String" Name="LRN" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MiddleName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="SuffixID" />
+    <Property Type="DateTime" Name="BirthDate" />
+    <Property Type="Int32" Name="Age" />
+    <Property Type="Int32" Name="GenderID" />
+    <Property Type="String" Name="FathersName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MothersName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Guardian" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="RelationID" />
+    <Property Type="Int32" Name="ReligionID" />
+    <Property Type="Int32" Name="EthnicityID" />
+    <Property Type="Boolean" Name="IsCityAssistant" />
+    <Property Type="Boolean" Name="Is4Ps" />
+    <Property Type="Int32" Name="TrackID" />
+    <Property Type="Int32" Name="StrandID" />
+    <Property Type="Int32" Name="AcadStatusID" />
+    <Property Type="Boolean" Name="IsProvisionary" />
+    <Property Type="Int32" Name="PrevSchoolID" />
+    <Property Type="String" Name="PrevSchoolName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PrevSchoolAddress" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PrevSYGraduatedID" />
+    <Property Type="Boolean" Name="IsRegistered" />
+    <Property Type="DateTime" Name="DateRegistered" />
+  </EntityType>
+  <EntityType Name="tbl_Suffix">
+    <Key>
+      <PropertyRef Name="SuffixID" />
+    </Key>
+    <Property Type="Int32" Name="SuffixID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Track">
+    <Key>
+      <PropertyRef Name="TrackID" />
+    </Key>
+    <Property Type="Int32" Name="TrackID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Type="Int32" Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CompleteName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ConfirmPassword" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AccessType" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DateCreated" />
+  </EntityType>
+  <EntityType Name="tbl_Strand">
+    <Key>
+      <PropertyRef Name="StrandID" />
+    </Key>
+    <Property Type="Int32" Name="StrandID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Type="Int32" Name="AddressID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Street" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Barangay" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Mun_City" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Province" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CompleteAddress" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_SchoolItems">
+    <Key>
+      <PropertyRef Name="ItemsID" />
+    </Key>
+    <Property Type="Int32" Name="ItemsID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="NoOfClassRoom" />
+    <Property Type="Int32" Name="NoOfComfortRoom" />
+    <Property Type="Int32" Name="NoOfComputer" />
+    <Property Type="Int32" Name="NoOfSeat" />
+  </EntityType>
+</Schema>

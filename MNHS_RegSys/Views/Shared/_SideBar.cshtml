@@ -1,0 +1,175 @@
+﻿@using MNHS_RegSys.Models
+@using Newtonsoft.Json;
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height: auto;">
+    <!-- Brand Logo -->
+    <a class="brand-link pb-1 pt-1" style="height: auto;background-color: #086da9;">
+        <div class="d-flex justify-content-center text-white text-bold" style="background-color: #086da9;"><h3 class="text-bold pt-2 pb-0">MNHS</h3></div>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar anyClass">
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+
+                <!---RECORDS---->
+                <li id="navRecords" class="nav-item has-treeview ModuleBGColor mb-1 pl-0">
+                    <a id="navlinkRecords" href="#" class="nav-link" style="color: white; font-size: 15px;">
+                        <i class="nav-icon fa fa-book"></i>
+                        <p>
+                            Records
+                            <i class="fa fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item pl-0">
+                            <a id="Dashboard" href="@Url.Content("~/Dashboard/Dashboard")" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon pl-4" style="color: white; font-size: 15px;"></i>
+                                <p class="pl-2" style="color: white; font-size: 15px;">
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item pl-0">
+                            <a id="StudentReg" href="@Url.Content("~/StudentRegistration/StudentRegistration")" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon pl-4" style="color: white; font-size: 15px;"></i>
+                                <p class="pl-2" style="color: white; font-size: 15px;">
+                                    Student Registration
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item pl-0">
+                            <a id="StudentQuiz" href="@Url.Content("~/StudentExcercises/StudentExcercises")" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon pl-4" style="color: white; font-size: 15px;"></i>
+                                <p class="pl-2" style="color: white; font-size: 15px;">
+                                    Student Excercises
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                      <!---Reports---->
+                <li id="navReports" class="nav-item has-treeview ModuleBGColor mb-1 pl-0">
+                    <a id="navlinknavReports" href="#" class="nav-link" style="color: white; font-size: 15px;">
+                        <i class="nav-icon fa fa-table"></i>
+                        <p>
+                         Reports
+                            <i class="fa fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul id="navtreeReports" class="nav nav-treeview">
+                        <li class="nav-item pl-0">
+                            <a id="Reports" href="@Url.Content("~/Reports/Reports")"  class="nav-link">
+                               <i class="fa fa-circle-o nav-icon pl-4" style="color: white; font-size: 15px;"></i>
+                                <p class="pl-2" style="color: white; font-size: 15px;">
+                                    Reports
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                 <!---File Maintenace---->
+                <li id="navFM" class="nav-item has-treeview ModuleBGColor mb-1 pl-0">
+                    <a id="FileMaintenance" href="#" class="nav-link" style="color: white; font-size: 15px;">
+                        <i class="nav-icon fa fa-archive"></i>
+                        <p>
+                           File Maintenance
+                            <i class="fa fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item pl-0">
+                            <a id="Adviser" href="@Url.Content("~/FileMaintenance/EncodedDataForm")" class="nav-link">
+                             <i class="fa fa-circle-o nav-icon pl-4" style="color: white; font-size: 15px;"></i>
+                                <p  class="pl-2" style="color: white; font-size: 15px;">
+                                    Encode Data
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item pl-0">
+                            <a id="SchoolYear" href="@Url.Content("~/FileMaintenance/SchoolYearForm")" class="nav-link">
+                               <i class="fa fa-circle-o nav-icon pl-4" style="color: white; font-size: 15px;"></i>
+                                <p  class="pl-2" style="color: white; font-size: 15px;">
+                                  School Year
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                     <ul class="nav nav-treeview">
+                        <li class="nav-item pl-0">
+                            <a id="GradeLevel" href="@Url.Content("~/FileMaintenance/GradeLevelForm")" class="nav-link">
+                               <i class="fa fa-circle-o nav-icon pl-4" style="color: white; font-size: 15px;"></i>
+                                <p  class="pl-2" style="color: white; font-size: 15px;">
+                                  Grade Level
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item pl-0">
+                            <a id="Ethnicity" href="@Url.Content("~/FileMaintenance/EthnicityForm")" class="nav-link">
+                               <i class="fa fa-circle-o nav-icon pl-4" style="color: white; font-size: 15px;"></i>
+                                <p  class="pl-2" style="color: white; font-size: 15px;">
+                                  Ethnicity
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item pl-0">
+                            <a id="Religion" href="@Url.Content("~/FileMaintenance/ReligionForm")" class="nav-link">
+                               <i class="fa fa-circle-o nav-icon pl-4" style="color: white; font-size: 15px;"></i>
+                                <p  class="pl-2" style="color: white; font-size: 15px;">
+                                  Religion
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                    <!---System Manager---->
+                <li id="navSM" class="nav-item has-treeview ModuleBGColor mb-1 pl-0">
+                    <a id="navlinkSM" href="#" class="nav-link" style="color: white; font-size: 15px;">
+                        <i class="nav-icon fa fa-database"></i>
+                        <p>
+                          System Manager
+                            <i class="fa fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item pl-0">
+                            <a id="UserReg" href="@Url.Content("~/UsersRegistration/UsersRegistration")"  class="nav-link">
+                               <i class="fa fa-circle-o nav-icon pl-4" style="color: white; font-size: 15px;"></i>
+                                <p class="pl-2" style="color: white; font-size: 15px;">
+                                    User Registration
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                
+                <!---LOG OUT---->
+                <li class="nav-item ModuleBGColor mb-1 pl-0">
+                    <a id="LogOut" href="@Url.Content("~/Account/LogOut")"  class="nav-link" style="color: white; font-size: 15px;">
+                        <i class="nav-icon fa fa-sign-out " style="color: white; font-size: 20px;">
+                        </i>
+                        <p>
+                            Log Out
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

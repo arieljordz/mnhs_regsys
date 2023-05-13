@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "ONLINE REGISTRATION";
+    Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+<div class="content-wrapper pt-5 mt-2" style="min-height: 767.986px;max-width: 100%;">
+    <div class="box-body" style="background-color: #daefdf;">
+        <section class="content-header">
+            @Html.Partial("_NoAccessforView")
+        </section>
+    </div>
+</div>
+@section scripts{
+    @*<script src="@Url.Content("~/Scripts/JSUsersRegistration.js")" type="text/javascript"></script>*@
+    <script type="text/javascript">
+        ActiveMenu("#Adviser");
+    </script>
+}

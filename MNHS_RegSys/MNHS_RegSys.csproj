@@ -1,0 +1,1486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{074577BD-359F-4E21-B92C-1D58825C7A2B}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MNHS_RegSys</RootNamespace>
+    <AssemblyName>MNHS_RegSys</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\New folder\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\FileMaintenanceController.cs" />
+    <Compile Include="Controllers\StudentExcercisesController.cs" />
+    <Compile Include="Controllers\StudentRegistrationController.cs" />
+    <Compile Include="Controllers\UsersRegistrationController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ByGradeLevelDTO.cs" />
+    <Compile Include="Models\BySpecializationDTO.cs" />
+    <Compile Include="Models\ExcercisesDTO.cs" />
+    <Compile Include="Models\ByTrackDTO.cs" />
+    <Compile Include="Models\ExcercisesRepository.cs" />
+    <Compile Include="Models\DashboardRepository.cs" />
+    <Compile Include="Models\ByStrandDTO.cs" />
+    <Compile Include="Models\DataFromDashboardDTO.cs" />
+    <Compile Include="Models\mnhsregsys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mnhsregsys.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReportsLibrary\ODBCConfiguration.cs" />
+    <Compile Include="Models\ReportsLibrary\Report.cs" />
+    <Compile Include="Models\ReportsLibrary\ReportFormatFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\GenerateReportsBy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateReportsBy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Dashboard.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\datepicker3.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\plugins\bootstrap-datepicker\js\locale\bootstrap-datepicker.en-GB.js" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\plugins\bootstrap\wizard\js\jquery.bootstrap.wizard.js" />
+    <Content Include="Content\plugins\chart\Chart.js" />
+    <Content Include="Content\plugins\chart\Chart.min.js" />
+    <Content Include="Content\plugins\chart\2.5.0.Chart.min.js" />
+    <Content Include="Content\plugins\dataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\plugins\dataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\plugins\dataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\plugins\dataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\plugins\dataTables\images\sort_asc.png" />
+    <Content Include="Content\plugins\dataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\plugins\dataTables\images\sort_both.png" />
+    <Content Include="Content\plugins\dataTables\images\sort_desc.png" />
+    <Content Include="Content\plugins\dataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\plugins\dataTables\js\popper.min.js" />
+    <Content Include="Content\plugins\dataTables\js\dataTables.bootstrap.js" />
+    <Content Include="Content\plugins\dataTables\js\jquery.dataTables.js" />
+    <Content Include="Content\plugins\dataTables\js\popper.js" />
+    <Content Include="Content\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\ajax-loading.gif" />
+    <Content Include="Images\MNHS.png" />
+    <Content Include="Images\MNHSlogo.png" />
+    <Content Include="Images\MNHSlogo2x2.png" />
+    <Content Include="Images\MNHSlogo3x3.png" />
+    <Content Include="Images\MNHS_Image.jpg" />
+    <Content Include="Images\Ratio.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\build\js\AdminLTE.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\build\js\ControlSidebar.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\build\js\Layout.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\build\js\PushMenu.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\build\js\SiteSearch.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\build\js\Treeview.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\build\js\Widget.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\build\npm\Plugins.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\build\npm\Publish.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\css\adminlte.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\css\adminlte.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\css\fonts.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\css\ionicons.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\AdminLTELogo.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\avatar.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\avatar04.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\avatar2.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\avatar3.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\avatar5.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\boxed-bg.jpg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\boxed-bg.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\credit\american-express.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\credit\cirrus.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\credit\mastercard.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\credit\mestro.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\credit\paypal.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\credit\paypal2.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\credit\visa.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\default-150x150.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\icons.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\photo1.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\photo2.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\photo3.jpg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\photo4.jpg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\user1-128x128.jpg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\user2-160x160.jpg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\user3-128x128.jpg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\user4-128x128.jpg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\user5-128x128.jpg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\user6-128x128.jpg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\user7-128x128.jpg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\img\user8-128x128.jpg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\adminlte.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\adminlte.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\codejquery.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\demo.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\moment.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\pages\dashboard.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\pages\dashboard2.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\pages\dashboard3.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chart.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\Chart.bundle.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\Chart.bundle.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\Chart.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\Chart.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\axes\cartesian\category.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\axes\cartesian\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\axes\cartesian\linear.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\axes\cartesian\logarithmic.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\axes\cartesian\time.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\axes\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\axes\labelling.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\axes\radial\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\axes\radial\linear.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\axes\styling.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\charts\area.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\charts\bar.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\charts\bubble.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\charts\doughnut.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\charts\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\charts\line.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\charts\mixed.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\charts\polar.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\charts\radar.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\charts\scatter.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\configuration\animations.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\configuration\elements.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\configuration\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\configuration\layout.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\configuration\legend.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\configuration\title.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\configuration\tooltip.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\developers\api.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\developers\axes.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\developers\charts.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\developers\contributing.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\developers\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\developers\plugins.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\developers\updates.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\general\colors.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\general\fonts.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\general\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\general\interactions\events.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\general\interactions\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\general\interactions\modes.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\general\options.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\general\responsive.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\getting-started\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\getting-started\installation.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\getting-started\integration.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\getting-started\usage.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-anchorjs\anchor-style.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-chartjs\Chart.bundle.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-chartjs\Chart.bundle.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-chartjs\Chart.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-chartjs\Chart.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-chartjs\chartjs-plugin-deferred.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-chartjs\chartjs-plugin-deferred.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-chartjs\style.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-fontsettings\fontsettings.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-fontsettings\website.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-ga\plugin.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-highlight\ebook.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-highlight\website.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-search-plus\jquery.mark.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-search-plus\search.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-search-plus\search.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook-plugin-sharing\buttons.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\gitbook.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\images\apple-touch-icon-precomposed-152.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\images\favicon.ico" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\style.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\theme.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\notes\comparison.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\notes\extensions.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\notes\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\notes\license.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\style.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\jquery\core.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\jquery\jquery.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\jquery\jquery.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\jquery\jquery.slim.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\jquery\jquery.slim.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\esm\popper-utils.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\esm\popper-utils.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\esm\popper.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\esm\popper.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\popper-utils.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\popper-utils.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\popper.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\popper.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\umd\popper-utils.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\umd\popper-utils.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\umd\popper.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\umd\popper.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\raphael.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\index2.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\index3.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\calendar.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\charts\chartjs.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\charts\flot.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\charts\inline.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\examples\404.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\examples\500.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\examples\blank.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\examples\invoice-print.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\examples\invoice.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\examples\lockscreen.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\examples\login.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\examples\profile.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\examples\register.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\forms\advanced.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\forms\editors.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\forms\general.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\mailbox\compose.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\mailbox\mailbox.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\mailbox\read-mail.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\tables\data.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\tables\simple.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\UI\buttons.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\UI\general.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\UI\icons.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\UI\sliders.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\pages\widgets.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap-slider\bootstrap-slider.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap-slider\slider.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\Chart.bundle.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\Chart.bundle.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\Chart.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\Chart.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\axes\cartesian\category.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\axes\cartesian\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\axes\cartesian\linear.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\axes\cartesian\logarithmic.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\axes\cartesian\time.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\axes\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\axes\labelling.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\axes\radial\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\axes\radial\linear.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\axes\styling.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\charts\area.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\charts\bar.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\charts\bubble.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\charts\doughnut.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\charts\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\charts\line.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\charts\mixed.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\charts\polar.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\charts\radar.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\charts\scatter.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\configuration\animations.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\configuration\elements.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\configuration\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\configuration\layout.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\configuration\legend.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\configuration\title.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\configuration\tooltip.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\developers\api.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\developers\axes.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\developers\charts.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\developers\contributing.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\developers\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\developers\plugins.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\developers\updates.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\general\colors.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\general\device-pixel-ratio.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\general\fonts.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\general\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\general\interactions\events.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\general\interactions\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\general\interactions\modes.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\general\options.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\general\responsive.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\getting-started\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\getting-started\installation.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\getting-started\integration.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\getting-started\usage.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-anchorjs\anchor-style.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-chartjs\Chart.bundle.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-chartjs\Chart.bundle.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-chartjs\Chart.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-chartjs\Chart.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-chartjs\chartjs-plugin-deferred.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-chartjs\chartjs-plugin-deferred.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-chartjs\style.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-fontsettings\fontsettings.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-fontsettings\website.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-ga\plugin.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-highlight\ebook.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-highlight\website.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-search-plus\jquery.mark.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-search-plus\search.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-search-plus\search.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook-plugin-sharing\buttons.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\gitbook.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\images\apple-touch-icon-precomposed-152.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\images\favicon.ico" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\style.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\theme.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\notes\comparison.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\notes\extensions.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\notes\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\notes\license.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\style.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chartjs-old\Chart.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chartjs-old\Chart.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\ckeditor.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\ar.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\ast.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\bg.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\cs.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\da.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\de.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\el.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\en-au.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\eo.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\es.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\et.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\eu.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\fi.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\fr.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\gl.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\gu.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\hr.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\hu.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\it.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\ja.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\km.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\kn.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\ko.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\ku.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\nb.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\ne.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\nl.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\oc.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\pl.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\pt-br.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\pt.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\ro.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\ru.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\si.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\sk.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\sq.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\sv.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\tr.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\tt.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\ug.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\uk.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\zh-cn.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\translations\zh.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\colorpicker\bootstrap-colorpicker.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\colorpicker\bootstrap-colorpicker.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\colorpicker\img\alpha-horizontal.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\colorpicker\img\alpha.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\colorpicker\img\hue-horizontal.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\colorpicker\img\hue.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\colorpicker\img\saturation.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\dataTables.bootstrap4.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\dataTables.bootstrap4.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\css\dataTables.autoFill.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\css\dataTables.autoFill.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\examples\columns.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\examples\complete-callback.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\examples\fill-both.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\examples\fill-horizontal.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\examples\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\examples\scrolling.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\examples\simple.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\examples\step-callback.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\images\filler.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\AutoFill\Readme.txt" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\css\dataTables.colReorder.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\css\dataTables.colReorder.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\alt_insert.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\colvis.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\col_filter.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\fixedcolumns.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\fixedheader.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\jqueryui.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\new_init.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\predefined.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\realtime.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\reset.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\scrolling.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\server_side.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\simple.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\examples\state_save.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\images\insert.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\License.txt" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\css\dataTables.colVis.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\css\dataTables.colvis.jqueryui.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\css\dataTables.colVis.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\button_order.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\exclude_columns.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\group_columns.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\jqueryui.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\mouseover.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\new_init.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\restore.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\simple.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\text.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\title_callback.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\two_tables.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\examples\two_tables_identical.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\js\dataTables.colVis.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\License.txt" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\bootstrap.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\colvis.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\col_filter.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\css_size.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\index_column.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\left_right_columns.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\right_column.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\rowspan.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\server-side-processing.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\simple.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\size_fixed.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\size_fluid.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\examples\two_columns.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\License.txt" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedHeader\css\dataTables.fixedHeader.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedHeader\css\dataTables.fixedHeader.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedHeader\examples\header_footer.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedHeader\examples\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedHeader\examples\simple.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedHeader\examples\top_left_right.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedHeader\examples\two_tables.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedHeader\examples\zIndexes.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedHeader\Readme.txt" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\KeyTable\css\dataTables.keyTable.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\KeyTable\css\dataTables.keyTable.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\KeyTable\examples\events.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\KeyTable\examples\html.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\KeyTable\examples\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\KeyTable\examples\scrolling.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\KeyTable\examples\simple.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\KeyTable\js\dataTables.keyTable.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\KeyTable\js\dataTables.keyTable.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\KeyTable\Readme.txt" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\css\dataTables.responsive.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\child-rows\column-control.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\child-rows\custom-renderer.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\child-rows\disable-child-rows.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\child-rows\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\child-rows\right-column.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\child-rows\whole-row-control.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\display-control\auto.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\display-control\classes.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\display-control\complexHeader.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\display-control\fixedHeader.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\display-control\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\display-control\init-classes.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\initialisation\ajax.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\initialisation\className.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\initialisation\default.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\initialisation\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\initialisation\new.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\initialisation\option.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\styling\bootstrap.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\styling\compact.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\styling\foundation.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\styling\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\examples\styling\scrolling.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\License.txt" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\css\dataTables.scroller.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\css\dataTables.scroller.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\examples\api_scrolling.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\examples\data\2500.txt" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\examples\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\examples\large_js_source.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\examples\server-side_processing.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\examples\simple.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\examples\state_saving.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\images\loading-background.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\js\dataTables.scroller.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\Readme.txt" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\css\dataTables.tableTools.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\ajax.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\alter_buttons.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\bootstrap.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\button_text.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\collection.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\defaults.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\index.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\jqueryui.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\multiple_tables.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\multi_instance.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\new_init.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\pdf_message.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\plug-in.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\select_column.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\select_multi.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\select_os.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\select_single.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\simple.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\examples\swf_path.html" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\collection.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\collection_hover.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\copy.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\copy_hover.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\csv.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\csv_hover.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\pdf.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\pdf_hover.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\print.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\print_hover.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\xls.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\xls_hover.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\images\sort_asc.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\images\sort_both.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\images\sort_desc.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\jquery.dataTables.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\jquery.dataTables.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\jquery.dataTables.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\jquery.dataTables_themeroller.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\datepicker3.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datepicker\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\daterangepicker\moment.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\daterangepicker\moment.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\fastclick\fastclick.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\fastclick\fastclick.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\excanvas.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\excanvas.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.colorhelpers.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.canvas.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.categories.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.image.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.image.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.navigate.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.threshold.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.time.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\fullcalendar\fullcalendar.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\all.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\aero%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\aero.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\aero.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\blue%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\blue.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\blue.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\flat%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\flat.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\flat.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\green%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\green.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\green.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\grey%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\grey.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\grey.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\orange%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\orange.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\orange.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\pink%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\pink.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\pink.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\purple%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\purple.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\purple.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\red%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\red.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\red.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\yellow%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\yellow.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\yellow.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\flat\_all.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\futurico\futurico%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\futurico\futurico.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\futurico\futurico.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\icheck.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\icheck.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\aero.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\blue.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\green.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\grey.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\line%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\line.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\line.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\orange.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\pink.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\purple.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\red.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\yellow.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\line\_all.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\aero%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\aero.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\aero.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\blue%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\blue.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\blue.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\green%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\green.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\green.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\grey%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\grey.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\grey.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\minimal%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\minimal.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\minimal.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\orange%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\orange.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\orange.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\pink%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\pink.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\pink.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\purple%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\purple.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\purple.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\red%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\red.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\red.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\yellow%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\yellow.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\yellow.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\minimal\_all.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\polaris\polaris%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\polaris\polaris.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\polaris\polaris.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\aero%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\aero.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\aero.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\blue%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\blue.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\blue.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\green%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\green.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\green.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\grey%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\grey.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\grey.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\orange%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\orange.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\orange.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\pink%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\pink.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\pink.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\purple%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\purple.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\purple.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\red%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\red.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\red.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\square%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\square.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\square.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\yellow%402x.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\yellow.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\yellow.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\iCheck\square\_all.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\input-mask\jquery.inputmask.date.extensions.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\input-mask\jquery.inputmask.extensions.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\input-mask\jquery.inputmask.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\input-mask\jquery.inputmask.numeric.extensions.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\input-mask\jquery.inputmask.phone.extensions.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\input-mask\jquery.inputmask.regex.extensions.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\input-mask\phone-codes\readme.txt" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ionslider\img\sprite-skin-flat.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ionslider\img\sprite-skin-nice.png" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ionslider\ion.rangeSlider.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ionslider\ion.rangeSlider.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ionslider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ionslider\ion.rangeSlider.skinNice.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jQueryUI\jquery-ui.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jQueryUI\jquery-ui.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jquery\core.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jquery\jquery.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jquery\jquery.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jquery\jquery.slim.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jquery\jquery.slim.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jvectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jvectormap\jquery-jvectormap-usa-en.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\knob\jquery.knob.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\morris\morris.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\morris\morris.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\morris\morris.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\pace\pace.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\pace\pace.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\pace\pace.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\pace\pace.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\esm\popper-utils.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\esm\popper-utils.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\esm\popper.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\esm\popper.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\popper-utils.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\popper-utils.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\popper.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\popper.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\umd\popper-utils.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\umd\popper-utils.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\umd\popper.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\umd\popper.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\az.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\bg.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\ca.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\cs.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\da.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\de.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\en.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\es.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\et.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\eu.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\fa.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\fi.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\fr.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\gl.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\he.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\hi.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\hr.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\hu.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\id.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\is.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\it.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\ko.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\lt.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\lv.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\mk.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\nb.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\nl.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\pl.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\pt-BR.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\pt.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\ro.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\ru.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\sk.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\sr.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\sv.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\th.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\tr.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\uk.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\vi.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\zh-CN.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\i18n\zh-TW.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\select2.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\select2.full.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\select2.full.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\select2.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\select2.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\select2\select2.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\slimScroll\jquery.slimscroll.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\sparkline\jquery.sparkline.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\timepicker\bootstrap-timepicker.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\timepicker\bootstrap-timepicker.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\rollup.config.js" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\scrollbar\scrollbar.css" />
+    <Content Include="Resources\AdminLTE-3.0.0-alpha.2\starter.html" />
+    <Content Include="Resources\ionicons\font-awesome.css" />
+    <Content Include="Resources\ionicons\ionicons.css" />
+    <Content Include="Resources\mask\jquery.mask.js" />
+    <Content Include="Resources\parsley\parsley.css" />
+    <Content Include="Resources\parsley\parsley.js" />
+    <Content Include="Resources\SmartWizard-master\dist\css\smart_wizard.css" />
+    <Content Include="Resources\SmartWizard-master\dist\css\smart_wizard.min.css" />
+    <Content Include="Resources\SmartWizard-master\dist\css\smart_wizard_theme_arrows.css" />
+    <Content Include="Resources\SmartWizard-master\dist\css\smart_wizard_theme_arrows.min.css" />
+    <Content Include="Resources\SmartWizard-master\dist\css\smart_wizard_theme_circles.css" />
+    <Content Include="Resources\SmartWizard-master\dist\css\smart_wizard_theme_circles.min.css" />
+    <Content Include="Resources\SmartWizard-master\dist\css\smart_wizard_theme_dots.css" />
+    <Content Include="Resources\SmartWizard-master\dist\css\smart_wizard_theme_dots.min.css" />
+    <Content Include="Resources\SmartWizard-master\dist\js\jquery.smartWizard.js" />
+    <Content Include="Resources\SmartWizard-master\dist\js\jquery.smartWizard.min.js" />
+    <Content Include="Resources\SmartWizard-master\examples\index.html" />
+    <Content Include="Resources\SmartWizard-master\examples\smartwizard-ajax.html" />
+    <Content Include="Resources\SmartWizard-master\examples\smartwizard-events.html" />
+    <Content Include="Resources\SmartWizard-master\examples\smartwizard-input.html" />
+    <Content Include="Resources\SmartWizard-master\examples\smartwizard-modal.html" />
+    <Content Include="Resources\SmartWizard-master\examples\smartwizard-multiple.html" />
+    <Content Include="Resources\SmartWizard-master\gulpfile.js" />
+    <Content Include="Resources\SmartWizard-master\karma.conf.js" />
+    <Content Include="Resources\SmartWizard-master\src\css\smart_wizard.css" />
+    <Content Include="Resources\SmartWizard-master\src\css\smart_wizard_theme_arrows.css" />
+    <Content Include="Resources\SmartWizard-master\src\css\smart_wizard_theme_circles.css" />
+    <Content Include="Resources\SmartWizard-master\src\css\smart_wizard_theme_dots.css" />
+    <Content Include="Resources\SmartWizard-master\src\js\jquery.smartWizard.js" />
+    <Content Include="Resources\SmartWizard-master\test\test-template.html" />
+    <Content Include="Resources\SmartWizard-master\test\test.js" />
+    <Content Include="Scripts\JSReports.js" />
+    <Content Include="Scripts\JSFileMaintenance.js" />
+    <Content Include="Scripts\JSDashboard.js" />
+    <Content Include="Scripts\JSStudentExcercises.js" />
+    <Content Include="Scripts\JSStudentRegistration.js" />
+    <Content Include="Scripts\JSUsersRegistration.js" />
+    <Content Include="Scripts\JSGlobal.js" />
+    <Content Include="Scripts\Masking.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\StudentRegistration\StudentRegistration.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Content\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="Content\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="Content\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="Content\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="Content\plugins\font-awesome\less\bordered-pulled.less" />
+    <None Include="Content\plugins\font-awesome\less\core.less" />
+    <None Include="Content\plugins\font-awesome\less\fixed-width.less" />
+    <None Include="Content\plugins\font-awesome\less\font-awesome.less" />
+    <None Include="Content\plugins\font-awesome\less\icons.less" />
+    <None Include="Content\plugins\font-awesome\less\larger.less" />
+    <None Include="Content\plugins\font-awesome\less\list.less" />
+    <None Include="Content\plugins\font-awesome\less\mixins.less" />
+    <None Include="Content\plugins\font-awesome\less\path.less" />
+    <None Include="Content\plugins\font-awesome\less\rotated-flipped.less" />
+    <None Include="Content\plugins\font-awesome\less\spinning.less" />
+    <None Include="Content\plugins\font-awesome\less\stacked.less" />
+    <None Include="Content\plugins\font-awesome\less\variables.less" />
+    <None Include="Content\plugins\font-awesome\scss\font-awesome.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_bordered-pulled.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_core.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_fixed-width.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_icons.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_larger.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_list.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_mixins.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_path.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_rotated-flipped.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_spinning.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_stacked.scss" />
+    <None Include="Content\plugins\font-awesome\scss\_variables.scss" />
+    <EntityDeploy Include="Models\mnhsregsys.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>mnhsregsys.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\PublishProfiles\mnhsonlinestudentregsys - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\mnhsonlinestudentregsys - Web Deploy.pubxml" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\.babelrc" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\.eslintignore" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\.eslintrc" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\.gitignore" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\js\.jscsrc" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\.csslintrc" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\AdminLTE-raw.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\AdminLTE.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_404_500_errors.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_alerts.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_bootstrap-variables.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_brand.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_buttons.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_callout.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_cards.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_carousel.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_control-sidebar.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_direct-chat.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_dropdown.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_elevation.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_forms.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_fullcalendar.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_info-box.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_invoice.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_labels.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_layout.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_lockscreen.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_login_and_register.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_mailbox.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_main-header.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_main-sidebar.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_miscellaneous.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_mixins.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_navs.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_print.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_products.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_profile.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_progress-bars.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_select2.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_sidebar-mini.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_small-box.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_social-widgets.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_table.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_text.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_timeline.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_users-list.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\build\scss\_variables.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\composer.json" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\css\adminlte.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\adminlte.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\adminlte.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap-grid.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap-grid.min.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap-reboot.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\js\bootstrap.bundle.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\js\bootstrap.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\bootstrap\js\bootstrap.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chart.js2" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\general\device-pixel-ratio.md" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\fonts\fontawesome\fontawesome-webfont.eot" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\fonts\fontawesome\fontawesome-webfont.woff" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\fonts\fontawesome\fontawesome-webfont.woff2" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\gitbook\fonts\fontawesome\FontAwesome.otf" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\chartjs2\docs\search_plus_index.json" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\font-awesome\css\font-awesome.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\jquery\jquery.min.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\jquery\jquery.slim.min.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\esm\popper-utils.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\esm\popper-utils.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\esm\popper.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\esm\popper.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\popper-utils.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\popper-utils.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\popper.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\popper.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\umd\popper-utils.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\umd\popper-utils.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\umd\popper.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\dist\js\plugins\popper\umd\popper.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\LICENSE" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\package-lock.json" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\package.json" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap-grid.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap-grid.min.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap-reboot.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\js\bootstrap.bundle.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\js\bootstrap.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\bootstrap\js\bootstrap.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\general\device-pixel-ratio.md" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\fonts\fontawesome\fontawesome-webfont.eot" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\fonts\fontawesome\fontawesome-webfont.woff" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\fonts\fontawesome\fontawesome-webfont.woff2" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\gitbook\fonts\fontawesome\FontAwesome.otf" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\chart.js\docs\search_plus_index.json" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\ckeditor\ckeditor.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColReorder\Readme.md" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\ColVis\Readme.md" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\FixedColumns\Readme.md" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\css\dataTables.responsive.scss" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Responsive\Readme.md" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\Scroller\examples\data\ssp.php" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\psd\collection.psd" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\psd\copy document.psd" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\psd\file_types.psd" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\images\psd\printer.psd" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\datatables\extensions\TableTools\Readme.md" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\font-awesome\css\font-awesome.css.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\input-mask\phone-codes\phone-be.json" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\input-mask\phone-codes\phone-codes.json" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jquery\jquery.min.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\jquery\jquery.slim.min.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\esm\popper-utils.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\esm\popper-utils.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\esm\popper.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\esm\popper.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\popper-utils.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\popper-utils.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\popper.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\popper.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\umd\popper-utils.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\umd\popper-utils.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\umd\popper.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\plugins\popper\umd\popper.min.js.map" />
+    <None Include="Resources\AdminLTE-3.0.0-alpha.2\README.md" />
+    <None Include="Resources\SmartWizard-master\.gitignore" />
+    <None Include="Resources\SmartWizard-master\.npmignore" />
+    <None Include="Resources\SmartWizard-master\.travis.yml" />
+    <None Include="Resources\SmartWizard-master\bower.json" />
+    <None Include="Resources\SmartWizard-master\composer.json" />
+    <None Include="Resources\SmartWizard-master\CONTRIBUTING.md" />
+    <None Include="Resources\SmartWizard-master\examples\ajaxtest.php" />
+    <None Include="Resources\SmartWizard-master\LICENSE" />
+    <None Include="Resources\SmartWizard-master\package.json" />
+    <None Include="Resources\SmartWizard-master\README.md" />
+    <Content Include="Views\StudentRegistration\_StudentInfo.cshtml" />
+    <Content Include="Views\Dashboard\_Dashboard.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_SideBar.cshtml" />
+    <Content Include="Views\Shared\_TopBar.cshtml" />
+    <Content Include="Views\Dashboard\Dashboard.cshtml" />
+    <Content Include="Views\UsersRegistration\UsersRegistration.cshtml" />
+    <Content Include="Views\UsersRegistration\_UsersInfo.cshtml" />
+    <Content Include="Views\Dashboard\_Charts.cshtml" />
+    <Content Include="Views\Shared\_MessageBox.cshtml" />
+    <Content Include="Views\FileMaintenance\EncodedDataForm.cshtml" />
+    <Content Include="Views\FileMaintenance\SchoolYearForm.cshtml" />
+    <Content Include="Views\FileMaintenance\GradeLevelForm.cshtml" />
+    <Content Include="Views\Shared\_NoAccessforView.cshtml" />
+    <Content Include="Views\UsersRegistration\NoAccessforView.cshtml" />
+    <Content Include="Views\Dashboard\NoAccessforView.cshtml" />
+    <Content Include="Views\FileMaintenance\ReligionForm.cshtml" />
+    <Content Include="Views\FileMaintenance\EthnicityForm.cshtml" />
+    <Content Include="Views\Reports\Reports.cshtml" />
+    <Content Include="Views\Reports\_Reports.cshtml" />
+    <Content Include="Views\Reports\NoAccessforView.cshtml" />
+    <Content Include="Views\Reports\_DataFromDashboard.cshtml" />
+    <Content Include="Views\Reports\_ByStrand.cshtml" />
+    <Content Include="Views\Reports\_ByTrack.cshtml" />
+    <Content Include="Views\Reports\_BySpecialization.cshtml" />
+    <Content Include="Views\Reports\_EmptyReport.cshtml" />
+    <Content Include="Views\Reports\_ByGradeLevel.cshtml" />
+    <Content Include="Views\StudentExcercises\StudentExcercises.cshtml" />
+    <Content Include="Views\StudentExcercises\_Excercises.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\GenerateReportsBy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GenerateReportsBy.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>15309</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

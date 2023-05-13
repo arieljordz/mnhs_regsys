@@ -1,0 +1,61 @@
+﻿<div class="card">
+    <div class="card-header bg-primarys">
+        <h3 class="card-title">
+            USERS REGISTRATION FORM
+        </h3>
+    </div>
+    <div class="card-body" style="padding: 0px !important;">
+        <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 mt-4 ml-4 mr-4">
+            <div class="row">
+                <label>
+                    USER DETAILS</label>
+            </div>
+            <form id="frmUsersReg" novalidate class="form-horizontal" data-parsley-required-message="">
+            <div class="row mb-1">
+                <div class="col-md-3">
+                    Complete Name
+                    <input type="text" class="form-control text-uppercase" name="CompleteName" placeholder="Complete Name"
+                        required="required" />
+                </div>
+                <div class="col-md-2">
+                    Username
+                    <input type="text" class="form-control" name="UserName" placeholder="UserName" required="required" />
+                </div>
+                <div class="col-md-2">
+                    Password
+                    <input type="Password" class="form-control" name="Password" placeholder="Password" required="required" />
+                </div>
+                <div class="col-md-2">
+                    Access Type
+                    <div class="form-group">
+                        <select class="form-control" id="" name="AccessType" required="required">
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="d-flex justify-content-end mt-3 mb-3 pr-4 pl-4">
+          <button class="btn btn-primary ml-3 hide" type="submit" id="btnUpdateUser">
+                Update User</button>
+            <button class="btn btn-primary ml-3" type="submit" id="btnSaveUser">
+                Save User</button>
+        </div>
+        <div class="d-flex p-2 bg-primarys text-white">
+            <div class="pl-2" style="font-size: 1.25rem; font-weight: 400; margin: 0;">
+                LIST OF USERS</div>
+        </div>
+        <div class="bgLightGreen BorderTop pb-3 pr-3 pl-3 pt-1 m-4">
+            <div class="row p-4">
+                <div class="col-md-12">
+                    <div class="dataTable_wrapper table-responsive">
+                        <table id="UsersTable" class="table table-bordered text-center" style="width: 100%">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

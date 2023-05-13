@@ -1,0 +1,58 @@
+﻿@*<!DOCTYPE html>*@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/dataTable/css")
+    @Styles.Render("~/bundles/site-css")
+    @Styles.Render("~/AdminLTE/css")
+    @Styles.Render("~/bundles/datepicker-css")
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+ @*   <link rel="stylesheet" href="@Url.Content("~/Resources/AdminLTE-3.0.0-alpha.2/plugins/datatables/jquery.dataTables.css")" />*@
+ @*   <link rel="stylesheet" href="@Url.Content("~/Content/plugins/dataTables/css/jquery.dataTables.css")" />*@
+    <link rel="stylesheet" href="@Url.Content("~/Resources/AdminLTE-3.0.0-alpha.2/dist/css/ionicons.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Resources/AdminLTE-3.0.0-alpha.2/plugins/font-awesome/css/font-awesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Resources/parsley/parsley.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Resources/ionicons/font-awesome.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Resources/ionicons/ionicons.css")">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+@*    <link rel="stylesheet" href="@Url.Content("~/Content/plugins/dataTables/css/dataTables.jqueryui.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/plugins/dataTables/css/jquery.dataTables_themeroller.css")" />*@
+</head>
+<body class="hold-transition skin-green sidebar-mini">
+    @if (ViewBag.Title != "Login")
+    {
+        @Html.Partial("_TopBar")
+        @Html.Partial("_MessageBox")
+        @Html.Partial("_SideBar")
+        @Html.Partial("_Footer")
+
+    }
+    @RenderBody()
+    <script type="text/javascript" src="@Url.Content("~/Resources/AdminLTE-3.0.0-alpha.2/plugins/jquery/jquery.js")"></script>
+
+    @Scripts.Render("~/AdminLTE/js")
+    @Scripts.Render("~/bundles/global-js")
+    @Scripts.Render("~/dataTable/js")
+    @RenderSection("scripts", false)
+
+    <script type="text/javascript" src="@Url.Content("~/Resources/mask/jquery.mask.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Resources/AdminLTE-3.0.0-alpha.2/plugins/datatables/jquery.dataTables.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Resources/AdminLTE-3.0.0-alpha.2/plugins/chart.js/Chart.bundle.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Resources/AdminLTE-3.0.0-alpha.2/plugins/chart.js/Chart.bundle.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Resources/AdminLTE-3.0.0-alpha.2/plugins/chart.js/Chart.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Resources/AdminLTE-3.0.0-alpha.2/plugins/chart.js/Chart.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Resources/AdminLTE-3.0.0-alpha.2/plugins/bootstrap/js/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/plugins/dataTables/js/jquery.dataTables.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/plugins/chart/2.5.0.Chart.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/plugins/dataTables/js/popper.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Resources/parsley/parsley.js")" defer></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Masking.js")"></script>
+    <div id="loader" class="loaderOverlay" style="display: none;">
+        <img id="img-loader" style="height:15%" src="@Url.Content("~/Images/ajax-loading.gif")" alt="Loading" />
+    </div>
+</body>
+</html>

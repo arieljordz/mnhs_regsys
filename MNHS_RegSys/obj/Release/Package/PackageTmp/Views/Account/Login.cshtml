@@ -1,0 +1,47 @@
+﻿@{
+    /**/
+
+    ViewBag.Title = "Login";
+                    //Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+<div class="login-bodys">
+    <div class="d-flex justify-content-center">
+        <div class="row" style="margin-top: 75px;">
+            <div class="col-md-12">
+                <img src="@Url.Content("~/Images/MNHSlogo2x2.png")" />
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="row">
+            <div class=" col-md-12">
+                <div class="card" style="margin-top: 40px;">
+                    <div class="card-body">
+                        <form role="form" id="formRegister">
+                        <h1 style="margin-top: 5px; margin-bottom: 20px;" class=" text-center">
+                            Log in
+                        </h1>
+                        <div class="login-container">
+                            <div class="form-group has-feedback">
+                                <input type="text" class="form-control flat" placeholder="Username" name="Username">
+                                <div class="glyphicon glyphicon-envelope form-control-feedback">
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <input type="Password" class="form-control flat" placeholder="Password" name="Password"
+                                    id="password-field">
+                                @*  <div toggle="#password-field" class="fa fa-fw fa-eye-slash field-icon toggle-password">
+                                </div>*@
+                            </div>
+                            <div class="form-group has-feedback text-right mt-1">
+                                <button type="submit" class="btn btn-primary btn-login" id="btnLog">
+                                    Log in</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

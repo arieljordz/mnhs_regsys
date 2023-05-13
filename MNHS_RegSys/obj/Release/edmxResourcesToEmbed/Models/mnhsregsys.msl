@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mnhsregsysModelStoreContainer" CdmEntityContainer="mnhsregsysEntities">
+    <EntitySetMapping Name="tbl_AcademicStatus">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_AcademicStatus">
+        <MappingFragment StoreEntitySet="tbl_AcademicStatus">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AcadStatusID" ColumnName="AcadStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EncodedData">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_EncodedData">
+        <MappingFragment StoreEntitySet="tbl_EncodedData">
+          <ScalarProperty Name="NoOfComputer" ColumnName="NoOfComputer" />
+          <ScalarProperty Name="NoOfSeat" ColumnName="NoOfSeat" />
+          <ScalarProperty Name="NoOfComfortRoom" ColumnName="NoOfComfortRoom" />
+          <ScalarProperty Name="NoOfClassRoom" ColumnName="NoOfClassRoom" />
+          <ScalarProperty Name="NoOfTeacher" ColumnName="NoOfTeacher" />
+          <ScalarProperty Name="EncodedDataID" ColumnName="EncodedDataID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Ethnicity">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Ethnicity">
+        <MappingFragment StoreEntitySet="tbl_Ethnicity">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EthnicityID" ColumnName="EthnicityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Gender">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Gender">
+        <MappingFragment StoreEntitySet="tbl_Gender">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_GradeLevel">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_GradeLevel">
+        <MappingFragment StoreEntitySet="tbl_GradeLevel">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="GradeLevelID" ColumnName="GradeLevelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Log">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Log">
+        <MappingFragment StoreEntitySet="tbl_Log">
+          <ScalarProperty Name="DateLog" ColumnName="DateLog" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PrevSchool">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_PrevSchool">
+        <MappingFragment StoreEntitySet="tbl_PrevSchool">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PrevSchoolID" ColumnName="PrevSchoolID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PrevSchoolYear">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_PrevSchoolYear">
+        <MappingFragment StoreEntitySet="tbl_PrevSchoolYear">
+          <ScalarProperty Name="SchoolYear" ColumnName="SchoolYear" />
+          <ScalarProperty Name="PrevSYGraduatedID" ColumnName="PrevSYGraduatedID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Relation">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Relation">
+        <MappingFragment StoreEntitySet="tbl_Relation">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RelationID" ColumnName="RelationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Religion">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Religion">
+        <MappingFragment StoreEntitySet="tbl_Religion">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SchoolYear">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_SchoolYear">
+        <MappingFragment StoreEntitySet="tbl_SchoolYear">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SchoolYear" ColumnName="SchoolYear" />
+          <ScalarProperty Name="EndYear" ColumnName="EndYear" />
+          <ScalarProperty Name="StartYear" ColumnName="StartYear" />
+          <ScalarProperty Name="SY_ID" ColumnName="SY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Specialization">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Specialization">
+        <MappingFragment StoreEntitySet="tbl_Specialization">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SpecID" ColumnName="SpecID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Strand">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Strand">
+        <MappingFragment StoreEntitySet="tbl_Strand">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StrandID" ColumnName="StrandID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Suffix">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Suffix">
+        <MappingFragment StoreEntitySet="tbl_Suffix">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SuffixID" ColumnName="SuffixID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Track">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Track">
+        <MappingFragment StoreEntitySet="tbl_Track">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TrackID" ColumnName="TrackID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_User">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_User">
+        <MappingFragment StoreEntitySet="tbl_User">
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccessType" ColumnName="AccessType" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="CompleteName" ColumnName="CompleteName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_GenerateReportsBy" FunctionName="mnhsregsysModel.Store.sp_GenerateReportsBy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mnhsregsysModel.sp_GenerateReportsBy_Result">
+          <ScalarProperty Name="TotalStudents" ColumnName="TotalStudents" />
+          <ScalarProperty Name="TotalBoys" ColumnName="TotalBoys" />
+          <ScalarProperty Name="TotalGirls" ColumnName="TotalGirls" />
+          <ScalarProperty Name="TeacherStudent" ColumnName="TeacherStudent" />
+          <ScalarProperty Name="TotalTeachers" ColumnName="TotalTeachers" />
+          <ScalarProperty Name="ClassRoomStudent" ColumnName="ClassRoomStudent" />
+          <ScalarProperty Name="TotalClassRooms" ColumnName="TotalClassRooms" />
+          <ScalarProperty Name="ComputerStudent" ColumnName="ComputerStudent" />
+          <ScalarProperty Name="TotalComputers" ColumnName="TotalComputers" />
+          <ScalarProperty Name="ToiletStudent" ColumnName="ToiletStudent" />
+          <ScalarProperty Name="TotalToilets" ColumnName="TotalToilets" />
+          <ScalarProperty Name="SeatStudent" ColumnName="SeatStudent" />
+          <ScalarProperty Name="TotalSeats" ColumnName="TotalSeats" />
+          <ScalarProperty Name="MaleABM" ColumnName="MaleABM" />
+          <ScalarProperty Name="MaleHUMSS" ColumnName="MaleHUMSS" />
+          <ScalarProperty Name="MaleSTEM" ColumnName="MaleSTEM" />
+          <ScalarProperty Name="MaleGAS" ColumnName="MaleGAS" />
+          <ScalarProperty Name="FemaleABM" ColumnName="FemaleABM" />
+          <ScalarProperty Name="FemaleHUMSS" ColumnName="FemaleHUMSS" />
+          <ScalarProperty Name="FemaleSTEM" ColumnName="FemaleSTEM" />
+          <ScalarProperty Name="FemaleGAS" ColumnName="FemaleGAS" />
+          <ScalarProperty Name="MaleAcademic" ColumnName="MaleAcademic" />
+          <ScalarProperty Name="MaleTVL" ColumnName="MaleTVL" />
+          <ScalarProperty Name="MaleSports" ColumnName="MaleSports" />
+          <ScalarProperty Name="MaleArtsDesign" ColumnName="MaleArtsDesign" />
+          <ScalarProperty Name="FemaleAcademic" ColumnName="FemaleAcademic" />
+          <ScalarProperty Name="FemaleTVL" ColumnName="FemaleTVL" />
+          <ScalarProperty Name="FemaleSports" ColumnName="FemaleSports" />
+          <ScalarProperty Name="FemaleArtsDesign" ColumnName="FemaleArtsDesign" />
+          <ScalarProperty Name="MaleRegular" ColumnName="MaleRegular" />
+          <ScalarProperty Name="MaleIrregular" ColumnName="MaleIrregular" />
+          <ScalarProperty Name="MaleTransferee" ColumnName="MaleTransferee" />
+          <ScalarProperty Name="MaleBalikAral" ColumnName="MaleBalikAral" />
+          <ScalarProperty Name="FemaleRegular" ColumnName="FemaleRegular" />
+          <ScalarProperty Name="FemaleIrregular" ColumnName="FemaleIrregular" />
+          <ScalarProperty Name="FemaleTransferee" ColumnName="FemaleTransferee" />
+          <ScalarProperty Name="FemaleBalikAral" ColumnName="FemaleBalikAral" />
+          <ScalarProperty Name="Islam" ColumnName="Islam" />
+          <ScalarProperty Name="Catholic" ColumnName="Catholic" />
+          <ScalarProperty Name="Evangelical" ColumnName="Evangelical" />
+          <ScalarProperty Name="INC" ColumnName="INC" />
+          <ScalarProperty Name="SDA" ColumnName="SDA" />
+          <ScalarProperty Name="UCCP" ColumnName="UCCP" />
+          <ScalarProperty Name="Jehova" ColumnName="Jehova" />
+          <ScalarProperty Name="Methodist" ColumnName="Methodist" />
+          <ScalarProperty Name="Baptists" ColumnName="Baptists" />
+          <ScalarProperty Name="Tribal" ColumnName="Tribal" />
+          <ScalarProperty Name="Ilongo" ColumnName="Ilongo" />
+          <ScalarProperty Name="Ilocano" ColumnName="Ilocano" />
+          <ScalarProperty Name="Blaan" ColumnName="Blaan" />
+          <ScalarProperty Name="Cebuano" ColumnName="Cebuano" />
+          <ScalarProperty Name="Manobo" ColumnName="Manobo" />
+          <ScalarProperty Name="Mangyan" ColumnName="Mangyan" />
+          <ScalarProperty Name="Tboli" ColumnName="Tboli" />
+          <ScalarProperty Name="Others" ColumnName="Others" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbl_Student">
+      <EntityTypeMapping TypeName="mnhsregsysModel.tbl_Student">
+        <MappingFragment StoreEntitySet="tbl_Student">
+          <ScalarProperty Name="DateRegistered" ColumnName="DateRegistered" />
+          <ScalarProperty Name="IsRegistered" ColumnName="IsRegistered" />
+          <ScalarProperty Name="PrevSYGraduatedID" ColumnName="PrevSYGraduatedID" />
+          <ScalarProperty Name="PrevSchoolAddress" ColumnName="PrevSchoolAddress" />
+          <ScalarProperty Name="PrevSchoolName" ColumnName="PrevSchoolName" />
+          <ScalarProperty Name="PrevSchoolID" ColumnName="PrevSchoolID" />
+          <ScalarProperty Name="IsProvisionary" ColumnName="IsProvisionary" />
+          <ScalarProperty Name="AcadStatusID" ColumnName="AcadStatusID" />
+          <ScalarProperty Name="StrandID" ColumnName="StrandID" />
+          <ScalarProperty Name="TrackID" ColumnName="TrackID" />
+          <ScalarProperty Name="Is4Ps" ColumnName="Is4Ps" />
+          <ScalarProperty Name="IsCityAssistant" ColumnName="IsCityAssistant" />
+          <ScalarProperty Name="EthnicityID" ColumnName="EthnicityID" />
+          <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+          <ScalarProperty Name="RelationID" ColumnName="RelationID" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Guardian" ColumnName="Guardian" />
+          <ScalarProperty Name="MothersName" ColumnName="MothersName" />
+          <ScalarProperty Name="FathersName" ColumnName="FathersName" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="SuffixID" ColumnName="SuffixID" />
+          <ScalarProperty Name="CompleteName" ColumnName="CompleteName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="LRN" ColumnName="LRN" />
+          <ScalarProperty Name="CompleteAddress" ColumnName="CompleteAddress" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="Mun_City" ColumnName="Mun_City" />
+          <ScalarProperty Name="Barangay" ColumnName="Barangay" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="SpecID" ColumnName="SpecID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SY_ID" ColumnName="SY_ID" />
+          <ScalarProperty Name="GradeLevelID" ColumnName="GradeLevelID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
